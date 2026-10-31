@@ -686,6 +686,7 @@ export const CATEGORIES_LIST = [
   'All Games',
   'Popular Games',
   'New Releases',
+  'Rummy',
 ] as const;
 `;
 

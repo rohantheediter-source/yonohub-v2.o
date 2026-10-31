@@ -82,6 +82,14 @@ export const Footer: React.FC<FooterProps> = ({
                   New Releases
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => onSelectCategory('Rummy')}
+                  className="hover:text-[var(--accent-primary)] transition-colors"
+                >
+                  Rummy Games
+                </button>
+              </li>
             </ul>
           </div>
 
