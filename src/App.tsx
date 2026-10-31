@@ -269,6 +269,7 @@ export function App() {
           {/* Game List Section (Most Important Section) */}
           <GameList
             games={filteredGames}
+            totalAvailableGames={GAMES_DATA.length}
             onSelectGame={openGameDetails}
             onDownloadGame={handleQuickDownload}
             onResetFilters={handleResetFilters}

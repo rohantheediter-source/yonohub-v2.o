@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import type { Game } from '../types/game';
 import { GameCard } from './GameCard';
-import { SearchX, RotateCcw, Rows3, LayoutGrid } from 'lucide-react';
+import { SearchX, RotateCcw, Rows3, LayoutGrid, Gamepad2 } from 'lucide-react';
 
 interface GameListProps {
   games: Game[];
+  totalAvailableGames?: number;
   onSelectGame: (game: Game) => void;
   onDownloadGame: (game: Game) => void;
   onResetFilters: () => void;
@@ -13,12 +14,31 @@ interface GameListProps {
 
 export const GameList: React.FC<GameListProps> = ({
   games,
+  totalAvailableGames = 0,
   onSelectGame,
   onDownloadGame,
   onResetFilters,
   currentCategoryTitle,
 }) => {
   const [columnMode, setColumnMode] = useState<'single' | 'double'>('double');
+
+  if (totalAvailableGames === 0) {
+    return (
+      <div className="w-full py-16 px-4 text-center rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-color)] flex flex-col items-center justify-center my-6 shadow-sm">
+        <div className="w-16 h-16 rounded-2xl bg-[var(--bg-subtle)] border border-[var(--border-color)] flex items-center justify-center text-[var(--accent-primary)] mb-4 shadow-sm">
+          <Gamepad2 className="w-8 h-8" />
+        </div>
+        <h3 className="text-xl font-bold text-[var(--text-main)] mb-2">No Games Added Yet</h3>
+        <p className="text-sm text-[var(--text-secondary)] max-w-md mx-auto mb-4 leading-relaxed">
+          The gaming repository is currently empty. Add your custom mobile games to{' '}
+          <code className="px-2 py-0.5 rounded bg-[var(--bg-subtle)] text-[var(--accent-primary)] font-semibold border border-[var(--border-color)] text-xs">
+            src/data/gamesData.ts
+          </code>{' '}
+          to display them on this website.
+        </p>
+      </div>
+    );
+  }
 
   if (games.length === 0) {
     return (
