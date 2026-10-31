@@ -12,6 +12,8 @@ import {
   SlidersHorizontal,
   WifiOff,
   Award,
+  Coins,
+  Trophy,
 } from 'lucide-react';
 import type { GameCategory, FilterState } from '../types/game';
 import { CATEGORIES_LIST } from '../data/gamesData';
@@ -37,6 +39,10 @@ export const CategoryFilters: React.FC<CategoryFiltersProps> = ({
         return <Flame className="w-3.5 h-3.5 text-amber-500" />;
       case 'New Releases':
         return <Sparkles className="w-3.5 h-3.5 text-[var(--accent-secondary)]" />;
+      case 'Rummy':
+        return <Trophy className="w-3.5 h-3.5 text-emerald-500" />;
+      case 'Slots':
+        return <Coins className="w-3.5 h-3.5 text-amber-500" />;
       case 'Action':
         return <Swords className="w-3.5 h-3.5 text-rose-500" />;
       case 'Adventure':

@@ -135,6 +135,8 @@ export function App() {
       'All Games': GAMES_DATA.length,
       'Popular Games': GAMES_DATA.filter((g) => g.isPopular).length,
       'New Releases': GAMES_DATA.filter((g) => g.isNew).length,
+      Rummy: GAMES_DATA.filter((g) => g.category === 'Rummy').length,
+      Slots: GAMES_DATA.filter((g) => g.category === 'Slots').length,
       Action: GAMES_DATA.filter((g) => g.category === 'Action').length,
       Adventure: GAMES_DATA.filter((g) => g.category === 'Adventure').length,
       Racing: GAMES_DATA.filter((g) => g.category === 'Racing').length,

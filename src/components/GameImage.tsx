@@ -35,6 +35,10 @@ export const GameImage: React.FC<GameImageProps> = ({
         return 'from-cyan-500/20 to-blue-600/30 text-cyan-400';
       case 'Puzzle':
         return 'from-pink-500/20 to-fuchsia-600/30 text-pink-400';
+      case 'Rummy':
+        return 'from-emerald-500/20 to-teal-600/30 text-emerald-500';
+      case 'Slots':
+        return 'from-amber-500/20 to-yellow-600/30 text-amber-500';
       default:
         return 'from-[#8B5CF6]/20 to-[#00D6B5]/20 text-[#00D6B5]';
     }

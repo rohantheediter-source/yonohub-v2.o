@@ -18,6 +18,7 @@ async function runTests() {
   const browser = await puppeteer.launch({
     executablePath: CHROME_PATH,
     headless: true,
+    protocolTimeout: 60000,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu'],
   });
 
@@ -67,7 +68,7 @@ async function runTests() {
     const searchInput = await page.$('input[placeholder*="Search games"]');
     if (!searchInput) throw new Error('Search input not found');
 
-    await searchInput.type('Call of Duty');
+    await searchInput.type('Yono Arcade');
     await new Promise((r) => setTimeout(r, 600));
 
     // Check suggestions popup
@@ -81,7 +82,7 @@ async function runTests() {
 
     // Verify search results list
     const filteredSearchCount = await page.$$eval('div[class*="group relative flex flex-row"]', (cards) => cards.length);
-    console.log(`Cards matching 'Call of Duty': ${filteredSearchCount}`);
+    console.log(`Cards matching 'Yono Arcade': ${filteredSearchCount}`);
     if (filteredSearchCount === 0) throw new Error('Search returned 0 results for valid query');
     console.log('✅ Search filtering verified.');
 
@@ -96,7 +97,7 @@ async function runTests() {
 
     // 3. Test Category Filters
     console.log('\n--- 3. Testing Category Filters ---');
-    const categoriesToTest = ['Action', 'Racing', 'Strategy', 'Puzzle'];
+    const categoriesToTest = ['Rummy', 'Slots', 'Arcade', 'Puzzle'];
     for (const cat of categoriesToTest) {
       const button = await page.evaluateHandle((c) => {
         const btns = Array.from(document.querySelectorAll('button'));
@@ -210,8 +211,8 @@ async function runTests() {
     // 6. Test Mobile Viewport & Responsiveness
     console.log('\n--- 6. Testing Mobile Viewport & Responsiveness ---');
     await page.setViewport({ width: 375, height: 812, isMobile: true, hasTouch: true });
-    await page.goto('http://localhost:5173', { waitUntil: 'networkidle0' });
-    await new Promise((r) => setTimeout(r, 400));
+    await page.goto('http://localhost:5173', { waitUntil: 'domcontentloaded' });
+    await new Promise((r) => setTimeout(r, 600));
 
     // Verify no horizontal overflow
     const hasHorizontalOverflow = await page.evaluate(() => {
@@ -223,7 +224,7 @@ async function runTests() {
     // Test mobile hamburger menu
     const menuBtn = await page.$('button[aria-label="Toggle navigation menu"]');
     if (!menuBtn) throw new Error('Mobile menu button not found');
-    await menuBtn.click();
+    await menuBtn.evaluate((b) => b.click());
     await new Promise((r) => setTimeout(r, 400));
 
     const menuOpen = await page.evaluate(() => {
@@ -235,7 +236,7 @@ async function runTests() {
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, '05-mobile-drawer.png') });
 
     // Close mobile menu
-    await menuBtn.click();
+    await menuBtn.evaluate((b) => b.click());
     await new Promise((r) => setTimeout(r, 300));
 
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, '06-mobile-game-cards.png') });

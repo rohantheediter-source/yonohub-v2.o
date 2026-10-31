@@ -217,12 +217,12 @@ export const GameDetailsModal: React.FC<GameDetailsModalProps> = ({
               </button>
 
               <a
-                href={game.googlePlayUrl}
+                href={game.downloadUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-[var(--bg-subtle)] hover:bg-[var(--border-color)] border border-[var(--border-color)] text-[var(--text-main)] text-xs font-semibold transition-colors shadow-sm"
               >
-                <span>Google Play Store</span>
+                <span>Official App Portal</span>
                 <ExternalLink className="w-3 h-3 text-[var(--accent-secondary)]" />
               </a>
             </div>

@@ -71,9 +71,12 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
 
   const startDownload = () => {
     setDownloading(true);
-    setProgress(5);
+    setProgress(15);
     setDownloadComplete(false);
-    onShowToast(`Preparing secure download for ${game.title}...`);
+    onShowToast(`Starting download for ${game.title}...`);
+    if (game.downloadUrl) {
+      window.open(game.downloadUrl, '_blank');
+    }
   };
 
   return (
@@ -211,14 +214,14 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
             </button>
           )}
 
-          {/* Official Google Play Store Link */}
+          {/* Official Destination Link */}
           <a
-            href={game.googlePlayUrl}
+            href={game.downloadUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[var(--bg-subtle)] hover:bg-[var(--border-color)] text-[var(--text-main)] border border-[var(--border-color)] text-xs font-semibold transition-colors shadow-sm"
           >
-            <span>Open in Google Play Store</span>
+            <span>Open Official App Destination</span>
             <ExternalLink className="w-3.5 h-3.5 text-[var(--accent-secondary)]" />
           </a>
         </div>

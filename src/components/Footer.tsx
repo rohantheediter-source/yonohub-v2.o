@@ -60,26 +60,26 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-1.5">
               <li>
                 <button
-                  onClick={() => onSelectCategory('Action')}
+                  onClick={() => onSelectCategory('Rummy')}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  Action Games
+                  Rummy Games
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCategory('Adventure')}
+                  onClick={() => onSelectCategory('Slots')}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  Adventure & RPG
+                  Slots & Spin Games
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCategory('Racing')}
+                  onClick={() => onSelectCategory('Arcade')}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  High-Speed Racing
+                  Arcade Games
                 </button>
               </li>
               <li>
@@ -87,7 +87,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onSelectCategory('Strategy')}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  Strategy & Tactical
+                  Strategy & Cards
                 </button>
               </li>
               <li>

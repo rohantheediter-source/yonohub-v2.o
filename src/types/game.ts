@@ -4,11 +4,13 @@ export type GameCategory =
   | 'All Games'
   | 'Popular Games'
   | 'New Releases'
+  | 'Rummy'
+  | 'Slots'
+  | 'Arcade'
+  | 'Strategy'
   | 'Action'
   | 'Adventure'
   | 'Racing'
-  | 'Strategy'
-  | 'Arcade'
   | 'Puzzle';
 
 export interface Game {
@@ -49,4 +51,3 @@ export interface FilterState {
   offlineOnly: boolean;
   editorsChoiceOnly: boolean;
 }
-
