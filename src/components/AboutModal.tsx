@@ -10,24 +10,24 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[var(--modal-overlay)] backdrop-blur-md animate-in fade-in duration-200">
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-2xl bg-[#191E27] border border-[#303946] rounded-2xl shadow-2xl p-5 sm:p-7 z-10 space-y-6 max-h-[90vh] overflow-y-auto">
+      <div className="relative w-full max-w-2xl bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-2xl shadow-2xl p-5 sm:p-7 z-10 space-y-6 max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-[#303946]">
+        <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#202733] border border-[#303946] flex items-center justify-center text-[#00D6B5]">
+            <div className="w-10 h-10 rounded-xl bg-[var(--bg-subtle)] border border-[var(--border-color)] flex items-center justify-center text-[var(--accent-primary)] shadow-sm">
               <Gamepad2 className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white">About NexusPlay</h2>
-              <p className="text-xs text-[#A7B0BE]">Premium Mobile Gaming Hub</p>
+              <h2 className="text-lg font-bold text-[var(--text-main)]">About NexusPlay</h2>
+              <p className="text-xs text-[var(--text-secondary)]">Premium Mobile Gaming Hub</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg bg-[#202733] border border-[#303946] text-[#A7B0BE] hover:text-white"
+            className="p-1.5 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-main)]"
           >
             <X className="w-4 h-4" />
           </button>
@@ -35,10 +35,10 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
 
         {/* Vision & Mission */}
         <div className="space-y-3">
-          <h3 className="text-sm font-bold text-white uppercase tracking-wider text-[#00D6B5]">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-[var(--accent-primary)]">
             Our Mission
           </h3>
-          <p className="text-sm text-[#A7B0BE] leading-relaxed">
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
             NexusPlay was designed from the ground up to provide mobile gamers with an
             uncluttered, ultra-fast, and trustworthy portal to discover and download the
             finest Android games. We cut through the noise of bloated app stores to offer a
@@ -48,35 +48,35 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
 
         {/* Core Pillars */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="p-4 rounded-xl bg-[#202733] border border-[#303946] space-y-1.5">
-            <ShieldCheck className="w-5 h-5 text-[#00D6B5]" />
-            <h4 className="text-xs font-bold text-white">100% Safe & Tested</h4>
-            <p className="text-[11px] text-[#A7B0BE] leading-relaxed">
+          <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] space-y-1.5 shadow-sm">
+            <ShieldCheck className="w-5 h-5 text-[var(--accent-primary)]" />
+            <h4 className="text-xs font-bold text-[var(--text-main)]">100% Safe & Tested</h4>
+            <p className="text-[11px] text-[var(--text-secondary)] leading-relaxed">
               Every package is verified with VirusTotal and multi-engine scanners before listing.
             </p>
           </div>
 
-          <div className="p-4 rounded-xl bg-[#202733] border border-[#303946] space-y-1.5">
-            <Zap className="w-5 h-5 text-[#8B5CF6]" />
-            <h4 className="text-xs font-bold text-white">High-Speed Mirrors</h4>
-            <p className="text-[11px] text-[#A7B0BE] leading-relaxed">
+          <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] space-y-1.5 shadow-sm">
+            <Zap className="w-5 h-5 text-[var(--accent-secondary)]" />
+            <h4 className="text-xs font-bold text-[var(--text-main)]">High-Speed Mirrors</h4>
+            <p className="text-[11px] text-[var(--text-secondary)] leading-relaxed">
               Global content delivery network provides rapid, unthrottled direct downloads.
             </p>
           </div>
 
-          <div className="p-4 rounded-xl bg-[#202733] border border-[#303946] space-y-1.5">
-            <Award className="w-5 h-5 text-amber-400" />
-            <h4 className="text-xs font-bold text-white">Strict Editorial Pick</h4>
-            <p className="text-[11px] text-[#A7B0BE] leading-relaxed">
+          <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] space-y-1.5 shadow-sm">
+            <Award className="w-5 h-5 text-amber-500" />
+            <h4 className="text-xs font-bold text-[var(--text-main)]">Strict Editorial Pick</h4>
+            <p className="text-[11px] text-[var(--text-secondary)] leading-relaxed">
               Handpicked games curated by seasoned mobile gaming enthusiasts.
             </p>
           </div>
         </div>
 
         {/* Developer & DMCA Commitment */}
-        <div className="p-4 rounded-xl bg-[#111318] border border-[#303946] space-y-2 text-xs text-[#A7B0BE]">
-          <div className="font-semibold text-white flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-[#00D6B5]" />
+        <div className="p-4 rounded-xl bg-[var(--bg-subtle)] border border-[var(--border-color)] space-y-2 text-xs text-[var(--text-secondary)]">
+          <div className="font-semibold text-[var(--text-main)] flex items-center gap-1.5">
+            <CheckCircle2 className="w-4 h-4 text-[var(--accent-primary)]" />
             <span>Developer Support & Legitimate Distribution</span>
           </div>
           <p className="leading-relaxed">
@@ -89,7 +89,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
         <div className="pt-2 flex justify-end">
           <button
             onClick={onClose}
-            className="px-5 py-2.5 rounded-xl bg-[#00D6B5] hover:bg-[#00D6B5]/90 text-[#111318] text-xs font-bold uppercase tracking-wider"
+            className="px-5 py-2.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-[var(--accent-primary-text)] text-xs font-bold uppercase tracking-wider shadow-sm"
           >
             Got It
           </button>

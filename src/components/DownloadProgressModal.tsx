@@ -77,27 +77,30 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[var(--modal-overlay)] backdrop-blur-md animate-in fade-in duration-200">
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div data-testid="download-modal" className="relative w-full max-w-lg bg-[#191E27] border border-[#303946] rounded-2xl shadow-2xl p-5 sm:p-6 z-10 space-y-5">
+      <div
+        data-testid="download-modal"
+        className="relative w-full max-w-lg bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-2xl shadow-2xl p-5 sm:p-6 z-10 space-y-5"
+      >
         {/* Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-[#303946]">
+        <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-[#00D6B5]" />
-            <h3 className="text-base font-bold text-white">Authorized Download Hub</h3>
+            <ShieldCheck className="w-5 h-5 text-[var(--accent-primary)]" />
+            <h3 className="text-base font-bold text-[var(--text-main)]">Authorized Download Hub</h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg bg-[#202733] border border-[#303946] text-[#A7B0BE] hover:text-white"
+            className="p-1.5 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-main)]"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Game summary */}
-        <div className="flex items-center gap-3.5 p-3 rounded-xl bg-[#202733] border border-[#303946]">
-          <div className="w-14 h-14 rounded-xl overflow-hidden bg-[#111318] border border-[#303946] flex-shrink-0">
+        <div className="flex items-center gap-3.5 p-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] shadow-sm">
+          <div className="w-14 h-14 rounded-xl overflow-hidden bg-[var(--bg-subtle)] border border-[var(--border-color)] flex-shrink-0">
             <GameImage
               src={game.icon}
               alt={game.title}
@@ -106,14 +109,14 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
             />
           </div>
           <div className="min-w-0 flex-1">
-            <h4 className="text-sm font-bold text-white truncate">{game.title}</h4>
-            <div className="text-xs text-[#A7B0BE] flex items-center gap-2 mt-0.5">
-              <span>{game.developer}</span>
+            <h4 className="text-sm font-bold text-[var(--text-main)] truncate">{game.title}</h4>
+            <div className="text-xs text-[var(--text-secondary)] flex items-center gap-2 mt-0.5">
+              <span className="font-medium text-[var(--text-main)]">{game.developer}</span>
               <span>•</span>
-              <span className="text-[#00D6B5]">{game.category}</span>
+              <span className="text-[var(--accent-primary)] font-semibold">{game.category}</span>
             </div>
-            <div className="flex items-center gap-2 mt-1 text-[11px] text-[#A7B0BE]">
-              <span className="px-1.5 py-0.2 rounded bg-[#191E27] border border-[#303946] text-white font-medium">
+            <div className="flex items-center gap-2 mt-1 text-[11px] text-[var(--text-secondary)]">
+              <span className="px-1.5 py-0.2 rounded bg-[var(--bg-subtle)] border border-[var(--border-color)] text-[var(--text-main)] font-semibold">
                 {game.version}
               </span>
               <span>{game.fileSize}</span>
@@ -124,42 +127,42 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
         </div>
 
         {/* Verification Checklist */}
-        <div className="p-3 rounded-xl bg-[#111318] border border-[#303946] space-y-1.5 text-xs">
-          <div className="flex items-center justify-between text-[#00D6B5] font-semibold text-[11px] uppercase tracking-wider mb-1">
+        <div className="p-3.5 rounded-xl bg-[var(--bg-subtle)] border border-[var(--border-color)] space-y-1.5 text-xs">
+          <div className="flex items-center justify-between text-[var(--accent-primary)] font-bold text-[11px] uppercase tracking-wider mb-1">
             <span className="flex items-center gap-1.5">
               <FileCheck className="w-3.5 h-3.5" />
               Security Integrity Verification
             </span>
-            <span className="text-[#00D6B5]">Passed 100%</span>
+            <span>Passed 100%</span>
           </div>
 
-          <div className="flex items-center gap-2 text-[#A7B0BE]">
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#00D6B5]" />
+          <div className="flex items-center gap-2 text-[var(--text-secondary)]">
+            <CheckCircle2 className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
             <span>Clean scan: 0 threats detected by VirusTotal & Antivirus</span>
           </div>
-          <div className="flex items-center gap-2 text-[#A7B0BE]">
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#00D6B5]" />
+          <div className="flex items-center gap-2 text-[var(--text-secondary)]">
+            <CheckCircle2 className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
             <span>Official signature matches certified developer certificate</span>
           </div>
         </div>
 
         {/* Download State & Progress */}
         {downloading && (
-          <div className="space-y-2 p-3.5 rounded-xl bg-[#202733] border border-[#00D6B5]/40 animate-pulse">
+          <div className="space-y-2 p-3.5 rounded-xl bg-[var(--bg-card)] border border-[var(--accent-primary)]/40 shadow-sm animate-pulse">
             <div className="flex items-center justify-between text-xs font-semibold">
-              <span className="text-white flex items-center gap-2">
-                <RefreshCw className="w-3.5 h-3.5 text-[#00D6B5] animate-spin" />
+              <span className="text-[var(--text-main)] flex items-center gap-2">
+                <RefreshCw className="w-3.5 h-3.5 text-[var(--accent-primary)] animate-spin" />
                 Transferring verified package...
               </span>
-              <span className="text-[#00D6B5] font-bold">{progress}%</span>
+              <span className="text-[var(--accent-primary)] font-bold">{progress}%</span>
             </div>
-            <div className="w-full h-2 rounded-full bg-[#111318] overflow-hidden border border-[#303946]">
+            <div className="w-full h-2 rounded-full bg-[var(--bg-subtle)] overflow-hidden border border-[var(--border-color)]">
               <div
-                className="h-full bg-gradient-to-r from-[#8B5CF6] to-[#00D6B5] transition-all duration-300 rounded-full"
+                className="h-full bg-gradient-to-r from-[var(--accent-secondary)] to-[var(--accent-primary)] transition-all duration-300 rounded-full"
                 style={{ width: `${progress}%` }}
               />
             </div>
-            <div className="flex justify-between text-[11px] text-[#A7B0BE]">
+            <div className="flex justify-between text-[11px] text-[var(--text-secondary)] font-medium">
               <span>Speed: 32.4 MB/s</span>
               <span>Server: Global Edge CDN</span>
             </div>
@@ -167,12 +170,12 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
         )}
 
         {downloadComplete && (
-          <div className="p-3.5 rounded-xl bg-[#00D6B5]/10 border border-[#00D6B5]/40 text-center space-y-2">
-            <div className="w-9 h-9 rounded-full bg-[#00D6B5] text-[#111318] flex items-center justify-center mx-auto font-bold">
+          <div className="p-3.5 rounded-xl bg-[var(--accent-primary)]/10 border border-[var(--accent-primary)]/40 text-center space-y-2">
+            <div className="w-9 h-9 rounded-full bg-[var(--accent-primary)] text-[var(--accent-primary-text)] flex items-center justify-center mx-auto font-bold shadow-sm">
               <CheckCircle2 className="w-5 h-5" />
             </div>
-            <div className="text-sm font-bold text-white">Download Complete!</div>
-            <p className="text-xs text-[#A7B0BE]">
+            <div className="text-sm font-bold text-[var(--text-main)]">Download Complete!</div>
+            <p className="text-xs text-[var(--text-secondary)]">
               Package manifest delivered. Tap to open or follow your browser downloads.
             </p>
           </div>
@@ -184,10 +187,10 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
             <button
               onClick={startDownload}
               disabled={downloading}
-              className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-sm tracking-wide transition-all shadow-lg ${
+              className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-sm tracking-wide transition-all shadow-md ${
                 downloading
-                  ? 'bg-[#303946] text-[#A7B0BE] cursor-not-allowed'
-                  : 'bg-[#00D6B5] hover:bg-[#00D6B5]/90 text-[#111318] shadow-[#00D6B5]/20 active:scale-95'
+                  ? 'bg-[var(--border-color)] text-[var(--text-muted)] cursor-not-allowed'
+                  : 'bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-[var(--accent-primary-text)] active:scale-95'
               }`}
             >
               <Download className="w-4 h-4 stroke-[2.5]" />
@@ -201,9 +204,9 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
                 setDownloadComplete(false);
                 startDownload();
               }}
-              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#202733] hover:bg-[#303946] text-white border border-[#303946] text-xs font-semibold transition-colors"
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[var(--bg-card)] hover:bg-[var(--bg-subtle)] text-[var(--text-main)] border border-[var(--border-color)] text-xs font-semibold transition-colors shadow-sm"
             >
-              <RefreshCw className="w-3.5 h-3.5 text-[#00D6B5]" />
+              <RefreshCw className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
               <span>Download Again</span>
             </button>
           )}
@@ -213,15 +216,15 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
             href={game.googlePlayUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#191E27] hover:bg-[#202733] text-[#A7B0BE] hover:text-white border border-[#303946] text-xs font-semibold transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[var(--bg-subtle)] hover:bg-[var(--border-color)] text-[var(--text-main)] border border-[var(--border-color)] text-xs font-semibold transition-colors shadow-sm"
           >
             <span>Open in Google Play Store</span>
-            <ExternalLink className="w-3.5 h-3.5 text-[#8B5CF6]" />
+            <ExternalLink className="w-3.5 h-3.5 text-[var(--accent-secondary)]" />
           </a>
         </div>
 
         {/* Disclaimer */}
-        <p className="text-[11px] text-[#A7B0BE]/80 text-center leading-relaxed">
+        <p className="text-[11px] text-[var(--text-secondary)] text-center leading-relaxed">
           Files are hosted on secure, authorized high-speed mirrors and verified for virus protection.
         </p>
       </div>

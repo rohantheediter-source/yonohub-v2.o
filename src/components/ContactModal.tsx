@@ -44,35 +44,35 @@ export const ContactModal: React.FC<ContactModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[var(--modal-overlay)] backdrop-blur-md animate-in fade-in duration-200">
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-lg bg-[#191E27] border border-[#303946] rounded-2xl shadow-2xl p-5 sm:p-6 z-10 space-y-5">
-        <div className="flex items-center justify-between pb-3 border-b border-[#303946]">
+      <div className="relative w-full max-w-lg bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-2xl shadow-2xl p-5 sm:p-6 z-10 space-y-5">
+        <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-[#202733] border border-[#303946] text-[#00D6B5]">
+            <div className="p-2 rounded-xl bg-[var(--bg-subtle)] border border-[var(--border-color)] text-[var(--accent-primary)] shadow-sm">
               <Mail className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-white">Contact Us</h3>
-              <p className="text-xs text-[#A7B0BE]">Support, Game Requests & Feedback</p>
+              <h3 className="text-base font-bold text-[var(--text-main)]">Contact Us</h3>
+              <p className="text-xs text-[var(--text-secondary)]">Support, Game Requests & Feedback</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg bg-[#202733] border border-[#303946] text-[#A7B0BE] hover:text-white"
+            className="p-1.5 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-main)]"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {submitted ? (
-          <div className="p-6 text-center space-y-3 bg-[#202733] rounded-xl border border-[#00D6B5]/30">
-            <div className="w-12 h-12 rounded-full bg-[#00D6B5]/20 text-[#00D6B5] flex items-center justify-center mx-auto">
+          <div className="p-6 text-center space-y-3 bg-[var(--bg-card)] rounded-xl border border-[var(--accent-primary)]/30">
+            <div className="w-12 h-12 rounded-full bg-[var(--accent-primary)]/20 text-[var(--accent-primary)] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-7 h-7" />
             </div>
-            <h4 className="text-base font-bold text-white">Message Sent!</h4>
-            <p className="text-xs text-[#A7B0BE] leading-relaxed">
+            <h4 className="text-base font-bold text-[var(--text-main)]">Message Sent!</h4>
+            <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
               Thank you for reaching out to NexusPlay. We will review your inquiry and follow up shortly.
             </p>
           </div>
@@ -80,36 +80,36 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-[#A7B0BE]">Your Name</label>
+                <label className="text-xs font-semibold text-[var(--text-secondary)]">Your Name</label>
                 <input
                   type="text"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Gamer tag or full name"
-                  className="w-full px-3 py-2 text-xs rounded-xl bg-[#202733] border border-[#303946] text-white focus:outline-none focus:border-[#00D6B5]"
+                  className="w-full px-3 py-2 text-xs rounded-xl bg-[var(--bg-input)] border border-[var(--border-color)] text-[var(--text-main)] focus:outline-none focus:border-[var(--accent-primary)] shadow-sm"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-[#A7B0BE]">Email Address</label>
+                <label className="text-xs font-semibold text-[var(--text-secondary)]">Email Address</label>
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@domain.com"
-                  className="w-full px-3 py-2 text-xs rounded-xl bg-[#202733] border border-[#303946] text-white focus:outline-none focus:border-[#00D6B5]"
+                  className="w-full px-3 py-2 text-xs rounded-xl bg-[var(--bg-input)] border border-[var(--border-color)] text-[var(--text-main)] focus:outline-none focus:border-[var(--accent-primary)] shadow-sm"
                 />
               </div>
             </div>
 
             <div className="space-y-1">
-              <label className="text-xs font-semibold text-[#A7B0BE]">Subject</label>
+              <label className="text-xs font-semibold text-[var(--text-secondary)]">Subject</label>
               <select
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="w-full px-3 py-2 text-xs rounded-xl bg-[#202733] border border-[#303946] text-white focus:outline-none focus:border-[#00D6B5]"
+                className="w-full px-3 py-2 text-xs rounded-xl bg-[var(--bg-input)] border border-[var(--border-color)] text-[var(--text-main)] focus:outline-none focus:border-[var(--accent-primary)] shadow-sm cursor-pointer"
               >
                 <option value="Game Suggestion">Request a Game</option>
                 <option value="Broken Link">Report Broken Download</option>
@@ -119,21 +119,21 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             </div>
 
             <div className="space-y-1">
-              <label className="text-xs font-semibold text-[#A7B0BE]">Your Message</label>
+              <label className="text-xs font-semibold text-[var(--text-secondary)]">Your Message</label>
               <textarea
                 required
                 rows={3}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Let us know what you think, report an issue, or suggest games..."
-                className="w-full px-3 py-2 text-xs rounded-xl bg-[#202733] border border-[#303946] text-white focus:outline-none focus:border-[#00D6B5] resize-none"
+                className="w-full px-3 py-2 text-xs rounded-xl bg-[var(--bg-input)] border border-[var(--border-color)] text-[var(--text-main)] focus:outline-none focus:border-[var(--accent-primary)] resize-none shadow-sm"
               />
             </div>
 
             <button
               type="submit"
               disabled={isSending}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#00D6B5] hover:bg-[#00D6B5]/90 text-[#111318] text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-[#00D6B5]/15"
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-[var(--accent-primary-text)] text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95"
             >
               {isSending ? (
                 <span>Sending...</span>

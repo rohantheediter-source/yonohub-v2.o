@@ -1,3 +1,5 @@
+export type Theme = 'light' | 'dark';
+
 export type GameCategory =
   | 'All Games'
   | 'Popular Games'

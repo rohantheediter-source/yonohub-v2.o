@@ -11,10 +11,20 @@ import { LegalModal } from './components/LegalModal';
 import { Toast } from './components/Toast';
 import { Footer } from './components/Footer';
 
-import type { Game, GameCategory, FilterState } from './types/game';
+import type { Game, GameCategory, FilterState, Theme } from './types/game';
 import { GAMES_DATA } from './data/gamesData';
 
 export function App() {
+  const [theme, setTheme] = useState<Theme>(() => {
+    try {
+      const saved = localStorage.getItem('nexusplay_theme');
+      if (saved === 'dark' || saved === 'light') return saved;
+    } catch {
+      // ignore
+    }
+    return 'light'; // Default to Light theme as requested!
+  });
+
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState<FilterState>({
     category: 'All Games',
@@ -37,6 +47,28 @@ export function App() {
       setToastMessage(null);
     }, 3200);
   }, []);
+
+  // Synchronize HTML theme attribute and meta theme-color
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('nexusplay_theme', theme);
+    } catch {
+      // ignore
+    }
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.setAttribute('content', theme === 'light' ? '#F4F6F9' : '#111318');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const next = prev === 'light' ? 'dark' : 'light';
+      showToast(`Switched to ${next === 'light' ? 'Light' : 'Dark'} Theme`);
+      return next;
+    });
+  };
 
   // Sync hash routing for shareable game links: #/game/:slug
   useEffect(() => {
@@ -157,7 +189,6 @@ export function App() {
         return new Date(b.updatedDate).getTime() - new Date(a.updatedDate).getTime();
       }
       if (filters.sortBy === 'size') {
-        // Compare raw numerical value of size if possible
         const parseSize = (str: string) => {
           const val = parseFloat(str);
           if (str.includes('GB')) return val * 1024;
@@ -192,7 +223,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#111318] text-white selection:bg-[#00D6B5] selection:text-[#111318]">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)] selection:bg-[var(--accent-primary)] selection:text-white transition-colors duration-200">
       {/* Header */}
       <Header
         currentCategory={filters.category}
@@ -205,6 +236,8 @@ export function App() {
         }}
         onScrollToGames={scrollToGames}
         onResetHome={handleResetHome}
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
 
       {/* Main Content */}
