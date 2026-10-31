@@ -177,7 +177,7 @@ export const Hero: React.FC<HeroProps> = ({
                           className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-[var(--accent-primary-text)] text-xs font-semibold transition-transform active:scale-95 shadow-sm"
                         >
                           <Download className="w-3 h-3" />
-                          <span>Get</span>
+                          <span>Download</span>
                         </button>
                       </div>
                     </div>
