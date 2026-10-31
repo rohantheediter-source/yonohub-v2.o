@@ -61,13 +61,15 @@ export const Hero: React.FC<HeroProps> = ({
     <section className="relative overflow-hidden bg-gradient-to-b from-[var(--bg-secondary)] via-[var(--bg-main)] to-[var(--bg-main)] border-b border-[var(--border-color)] py-8 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors">
       {/* Subtle gaming background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Soft atmospheric gradient */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[520px] h-[220px] bg-gradient-to-b from-[var(--accent-primary)]/10 via-[var(--accent-secondary)]/5 to-transparent blur-3xl opacity-60" />
+        {/* Soft atmospheric glowing orbs */}
+        <div className="absolute -top-16 -left-12 w-96 h-96 bg-gradient-to-tr from-teal-500/20 via-emerald-400/15 to-transparent blur-3xl rounded-full animate-float-slow" />
+        <div className="absolute -top-20 -right-12 w-96 h-96 bg-gradient-to-bl from-purple-500/20 via-indigo-400/15 to-transparent blur-3xl rounded-full animate-pulse-glow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[250px] bg-gradient-to-r from-teal-500/10 via-cyan-400/10 to-purple-500/10 blur-3xl opacity-70" />
         {/* Subtle geometric dot grid pattern */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
-            backgroundImage: `radial-gradient(circle, var(--accent-primary) 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(circle, var(--accent-primary) 1.2px, transparent 1.2px)`,
             backgroundSize: '24px 24px',
           }}
         />
@@ -75,28 +77,28 @@ export const Hero: React.FC<HeroProps> = ({
 
       <div className="relative max-w-4xl mx-auto text-center">
         {/* Micro badge */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-color)] text-[var(--accent-primary)] text-xs font-semibold mb-3 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Curated Independent Mobile Games Repository</span>
-          <span className="w-1 h-1 rounded-full bg-[var(--border-color)]" />
-          <span className="text-[var(--text-secondary)] font-medium">{totalGamesCount} Titles Available</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--bg-secondary)]/90 backdrop-blur-sm border border-teal-500/30 text-teal-600 dark:text-teal-400 text-xs font-bold mb-3 shadow-sm hover:scale-105 transition-transform duration-200">
+          <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-spin" style={{ animationDuration: '8s' }} />
+          <span>Verified APK Gaming Repository</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="text-[var(--text-secondary)] font-semibold">{totalGamesCount} Titles Active</span>
         </div>
 
         {/* Heading & Subtitle */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[var(--text-main)] mb-2 font-sans">
-          Discover Your Next Game
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-[var(--text-main)] mb-2.5 font-sans">
+          Discover Your Next <span className="bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">Favorite Game</span>
         </h1>
-        <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-xl mx-auto mb-6">
-          Explore and download your favourite mobile games.
+        <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-xl mx-auto mb-6 font-medium">
+          Explore and download your favourite mobile games with fast APK speeds.
         </p>
 
         {/* Modern Search Bar */}
         <div ref={containerRef} className="relative max-w-2xl mx-auto text-left">
           <div
-            className={`flex items-center w-full rounded-xl bg-[var(--bg-input)] border transition-all duration-200 px-3.5 py-2.5 sm:py-3 shadow-sm ${
+            className={`flex items-center w-full rounded-2xl bg-[var(--bg-input)] border transition-all duration-300 px-4 py-3 sm:py-3.5 shadow-sm ${
               isFocused
-                ? 'border-[var(--accent-primary)] ring-2 ring-[var(--accent-primary)]/20 shadow-md'
-                : 'border-[var(--border-color)] hover:border-[var(--border-hover)]'
+                ? 'border-teal-500 ring-4 ring-teal-500/15 shadow-xl shadow-teal-500/10 scale-[1.01]'
+                : 'border-[var(--border-color)] hover:border-teal-400/50 hover:shadow-md'
             }`}
           >
             <Search className={`w-5 h-5 mr-3 transition-colors ${isFocused ? 'text-[var(--accent-primary)]' : 'text-[var(--text-secondary)]'}`} />

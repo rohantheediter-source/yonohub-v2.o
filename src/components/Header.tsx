@@ -55,23 +55,26 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onResetHome}
             className="flex items-center gap-3 cursor-pointer select-none group"
           >
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-[var(--accent-secondary)] to-[var(--accent-primary)] p-[1.5px] transition-transform duration-200 group-hover:scale-105 shadow-sm">
+            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-indigo-600 p-[1.5px] transition-transform duration-300 group-hover:scale-110 shadow-md shadow-teal-500/20">
               <div className="w-full h-full bg-[var(--bg-secondary)] rounded-[10px] flex items-center justify-center">
-                <Gamepad2 className="w-5 h-5 text-[var(--accent-primary)] transition-colors" />
+                <Gamepad2 className="w-5 h-5 text-teal-600 dark:text-teal-400 group-hover:rotate-12 transition-transform duration-300" />
               </div>
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[var(--accent-primary)] rounded-full ring-2 ring-[var(--bg-secondary)] animate-pulse" />
+              <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-[var(--bg-secondary)]"></span>
+              </span>
             </div>
 
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="text-lg font-bold tracking-tight text-[var(--text-main)] font-sans">
-                  YONO<span className="text-[var(--accent-primary)]"> HUB</span>
+                <span className="text-lg font-black tracking-tight text-[var(--text-main)] font-sans">
+                  YONO<span className="bg-gradient-to-r from-teal-500 via-emerald-400 to-indigo-500 bg-clip-text text-transparent"> HUB</span>
                 </span>
-                <span className="hidden sm:inline-block text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-[var(--bg-subtle)] border border-[var(--border-color)] text-[var(--text-secondary)]">
+                <span className="hidden sm:inline-block text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-gradient-to-r from-teal-500/10 to-indigo-500/10 border border-teal-500/30 text-teal-600 dark:text-teal-400">
                   v2.0
                 </span>
               </div>
-              <span className="text-[10px] text-[var(--text-secondary)] tracking-wider uppercase hidden sm:block">
+              <span className="text-[10px] text-[var(--text-secondary)] tracking-wider uppercase hidden sm:block font-medium">
                 Mobile Game Vault
               </span>
             </div>

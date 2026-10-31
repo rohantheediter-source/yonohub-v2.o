@@ -14,24 +14,39 @@ export const GameCard: React.FC<GameCardProps> = ({
   onSelect,
   onDownload,
 }) => {
+  const getCategoryBadgeStyle = (cat: string) => {
+    switch (cat) {
+      case 'Rummy':
+        return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30';
+      case 'Slots':
+        return 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30';
+      case 'Arcade':
+        return 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/30';
+      case 'Puzzle':
+        return 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30';
+      default:
+        return 'bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/30';
+    }
+  };
+
   return (
     <div
       data-testid="game-card"
       onClick={() => onSelect(game)}
-      className="group relative flex flex-row items-center gap-3 sm:gap-4 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] hover:border-[var(--border-active)] hover:bg-[var(--bg-card-hover)] transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
+      className="game-card-transition group relative flex flex-row items-center gap-3 sm:gap-4 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] hover:border-teal-500/60 hover:bg-[var(--bg-card-hover)] cursor-pointer shadow-sm"
     >
       {/* LEFT SIDE: Square game icon */}
-      <div className="relative flex-shrink-0 w-13 h-13 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-subtle)] shadow-sm group-hover:scale-105 transition-transform duration-200">
+      <div className="relative flex-shrink-0 w-13 h-13 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-[var(--border-color)] group-hover:border-teal-500/40 bg-[var(--bg-subtle)] shadow-sm group-hover:scale-105 group-hover:shadow-md transition-all duration-300">
         <GameImage
           src={game.icon}
           alt={game.title}
           category={game.category}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         {game.isEditorsChoice && (
           <div
             title="Editors' Choice"
-            className="absolute top-0 right-0 bg-[var(--accent-primary)] text-[var(--accent-primary-text)] p-0.5 rounded-bl-md"
+            className="absolute top-0 right-0 bg-gradient-to-bl from-amber-500 to-orange-500 text-white p-0.5 rounded-bl-md shadow-sm"
           >
             <Sparkles className="w-2.5 h-2.5" />
           </div>
@@ -41,16 +56,28 @@ export const GameCard: React.FC<GameCardProps> = ({
       {/* MIDDLE SECTION: Title, short description, category, size & version */}
       <div className="flex-1 min-w-0 flex flex-col justify-center">
         {/* Title row */}
-        <div className="flex items-center gap-2 mb-0.5">
-          <h3 className="text-sm sm:text-base font-bold text-[var(--text-main)] group-hover:text-[var(--accent-primary)] transition-colors truncate">
+        <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5">
+          <h3 className="text-sm sm:text-base font-bold text-[var(--text-main)] group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors truncate">
             {game.title}
           </h3>
 
           {/* Star rating pill */}
-          <div className="flex-shrink-0 flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-[var(--bg-subtle)] border border-[var(--border-color)] text-[10px] font-bold text-amber-500">
-            <Star className="w-2.5 h-2.5 fill-amber-500 text-amber-500" />
+          <div className="flex-shrink-0 flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/25 text-[10px] font-bold text-amber-600 dark:text-amber-400">
+            <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-500" />
             <span>{game.rating.toFixed(1)}</span>
           </div>
+
+          {game.isPopular && (
+            <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/30 text-[9px] font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
+              Hot
+            </span>
+          )}
+
+          {game.isNew && (
+            <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded-md bg-purple-500/10 border border-purple-500/30 text-[9px] font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
+              New
+            </span>
+          )}
         </div>
 
         {/* Short description */}
@@ -60,7 +87,7 @@ export const GameCard: React.FC<GameCardProps> = ({
 
         {/* Meta badges: Category, Size, Version */}
         <div className="flex items-center flex-wrap gap-1.5 text-[10px] sm:text-[11px] text-[var(--text-secondary)]">
-          <span className="px-2 py-0.5 rounded-md bg-[var(--bg-subtle)] border border-[var(--border-color)] font-semibold text-[var(--accent-primary)]">
+          <span className={`px-2 py-0.5 rounded-md border font-semibold ${getCategoryBadgeStyle(game.category)}`}>
             {game.category}
           </span>
 
@@ -88,9 +115,9 @@ export const GameCard: React.FC<GameCardProps> = ({
             onDownload(game);
           }}
           aria-label={`Download ${game.title}`}
-          className="flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-[var(--accent-primary-text)] text-xs sm:text-sm font-bold tracking-wide shadow-sm hover:shadow-md transition-all duration-150 active:scale-95"
+          className="btn-gaming-gradient flex items-center justify-center gap-1 sm:gap-1.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl text-white text-xs sm:text-sm font-bold tracking-wide shadow-sm hover:shadow-lg transition-all duration-200 active:scale-95 group/btn"
         >
-          <Download className="w-3.5 h-3.5 stroke-[2.5]" />
+          <Download className="w-3.5 h-3.5 stroke-[2.5] group-hover/btn:translate-y-0.5 transition-transform duration-200" />
           <span className="uppercase">Download</span>
         </button>
       </div>

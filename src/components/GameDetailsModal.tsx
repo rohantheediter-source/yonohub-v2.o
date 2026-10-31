@@ -210,7 +210,7 @@ export const GameDetailsModal: React.FC<GameDetailsModalProps> = ({
             <div className="w-full sm:w-auto flex flex-col gap-2 flex-shrink-0">
               <button
                 onClick={() => onDownload(game)}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-[var(--accent-primary-text)] text-sm font-extrabold uppercase tracking-wide shadow-md active:scale-95 transition-all"
+                className="btn-gaming-gradient w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-white text-sm font-extrabold uppercase tracking-wide shadow-lg shadow-teal-500/25 active:scale-95 transition-all cursor-pointer"
               >
                 <Download className="w-4 h-4 stroke-[2.5]" />
                 <span>Download APK ({game.fileSize})</span>

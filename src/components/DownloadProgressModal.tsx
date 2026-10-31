@@ -151,31 +151,31 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
 
         {/* Download State & Progress */}
         {downloading && (
-          <div className="space-y-2 p-3.5 rounded-xl bg-[var(--bg-card)] border border-[var(--accent-primary)]/40 shadow-sm animate-pulse">
-            <div className="flex items-center justify-between text-xs font-semibold">
+          <div className="space-y-2.5 p-4 rounded-xl bg-[var(--bg-card)] border border-teal-500/50 shadow-md">
+            <div className="flex items-center justify-between text-xs font-bold">
               <span className="text-[var(--text-main)] flex items-center gap-2">
-                <RefreshCw className="w-3.5 h-3.5 text-[var(--accent-primary)] animate-spin" />
+                <RefreshCw className="w-3.5 h-3.5 text-teal-500 animate-spin" />
                 Transferring verified package...
               </span>
-              <span className="text-[var(--accent-primary)] font-bold">{progress}%</span>
+              <span className="text-teal-600 dark:text-teal-400 font-extrabold text-sm">{progress}%</span>
             </div>
-            <div className="w-full h-2 rounded-full bg-[var(--bg-subtle)] overflow-hidden border border-[var(--border-color)]">
+            <div className="w-full h-2.5 rounded-full bg-[var(--bg-subtle)] overflow-hidden border border-[var(--border-color)]">
               <div
-                className="h-full bg-gradient-to-r from-[var(--accent-secondary)] to-[var(--accent-primary)] transition-all duration-300 rounded-full"
+                className="h-full bg-gradient-to-r from-teal-500 via-emerald-400 to-indigo-500 animate-shimmer transition-all duration-300 rounded-full"
                 style={{ width: `${progress}%` }}
               />
             </div>
             <div className="flex justify-between text-[11px] text-[var(--text-secondary)] font-medium">
-              <span>Speed: 32.4 MB/s</span>
+              <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Speed: 42.8 MB/s</span>
               <span>Server: Global Edge CDN</span>
             </div>
           </div>
         )}
 
         {downloadComplete && (
-          <div className="p-3.5 rounded-xl bg-[var(--accent-primary)]/10 border border-[var(--accent-primary)]/40 text-center space-y-2">
-            <div className="w-9 h-9 rounded-full bg-[var(--accent-primary)] text-[var(--accent-primary-text)] flex items-center justify-center mx-auto font-bold shadow-sm">
-              <CheckCircle2 className="w-5 h-5" />
+          <div className="p-4 rounded-xl bg-gradient-to-r from-teal-500/10 via-emerald-500/10 to-teal-500/10 border border-teal-500/40 text-center space-y-2 animate-in fade-in zoom-in-95">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center mx-auto font-bold shadow-md shadow-teal-500/30">
+              <CheckCircle2 className="w-6 h-6" />
             </div>
             <div className="text-sm font-bold text-[var(--text-main)]">Download Complete!</div>
             <p className="text-xs text-[var(--text-secondary)]">
@@ -193,7 +193,7 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
               className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-sm tracking-wide transition-all shadow-md ${
                 downloading
                   ? 'bg-[var(--border-color)] text-[var(--text-muted)] cursor-not-allowed'
-                  : 'bg-[var(--accent-primary)] hover:bg-[var(--accent-primary-hover)] text-[var(--accent-primary-text)] active:scale-95'
+                  : 'btn-gaming-gradient text-white shadow-lg shadow-teal-500/20 active:scale-95'
               }`}
             >
               <Download className="w-4 h-4 stroke-[2.5]" />
