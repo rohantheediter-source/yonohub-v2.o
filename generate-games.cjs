@@ -647,7 +647,7 @@ const games = rawList.map((item, index) => {
     minAndroid: 'Android 5.0+',
     packageName: `com.${item.slug.replace(/-/g, '')}.app`,
     isPopular: !!item.isPopular,
-    isNew: !!item.isNew,
+    isNew: !!item.isNew || !item.isPopular,
     isEditorsChoice: !!item.isEditorsChoice,
     isOffline: false,
     tags: [item.category, 'Online', 'Multiplayer', 'Instant Play'],
@@ -671,11 +671,6 @@ export const CATEGORIES_LIST = [
   'All Games',
   'Popular Games',
   'New Releases',
-  'Rummy',
-  'Slots',
-  'Arcade',
-  'Strategy',
-  'Puzzle',
 ] as const;
 `;
 

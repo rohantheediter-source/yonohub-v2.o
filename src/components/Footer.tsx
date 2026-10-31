@@ -55,47 +55,31 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Col 2: Popular Genres */}
           <div className="space-y-2.5">
             <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--text-main)]">
-              Explore Genres
+              Collections
             </h4>
             <ul className="space-y-1.5">
               <li>
                 <button
-                  onClick={() => onSelectCategory('Rummy')}
+                  onClick={() => onSelectCategory('All Games')}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  Rummy Games
+                  All Games (52)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCategory('Slots')}
+                  onClick={() => onSelectCategory('Popular Games')}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  Slots & Spin Games
+                  Popular Games
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCategory('Arcade')}
+                  onClick={() => onSelectCategory('New Releases')}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  Arcade Games
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onSelectCategory('Strategy')}
-                  className="hover:text-[var(--accent-primary)] transition-colors"
-                >
-                  Strategy & Cards
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onSelectCategory('Puzzle')}
-                  className="hover:text-[var(--accent-primary)] transition-colors"
-                >
-                  Mind & Puzzle
+                  New Releases
                 </button>
               </li>
             </ul>

@@ -254,10 +254,10 @@ export const Header: React.FC<HeaderProps> = ({
                   Categories
                 </span>
                 <span className="text-[11px] text-[var(--text-secondary)]">
-                  {CATEGORIES_LIST.length} genres
+                  {CATEGORIES_LIST.length} collections
                 </span>
               </div>
-              <div className="grid grid-cols-2 gap-1.5">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
                 {CATEGORIES_LIST.map((cat) => (
                   <button
                     key={cat}

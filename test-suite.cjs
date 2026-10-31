@@ -97,7 +97,7 @@ async function runTests() {
 
     // 3. Test Category Filters
     console.log('\n--- 3. Testing Category Filters ---');
-    const categoriesToTest = ['Rummy', 'Slots', 'Arcade', 'Puzzle'];
+    const categoriesToTest = ['Popular Games', 'New Releases'];
     for (const cat of categoriesToTest) {
       const button = await page.evaluateHandle((c) => {
         const btns = Array.from(document.querySelectorAll('button'));
