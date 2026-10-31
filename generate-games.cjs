@@ -681,3 +681,4 @@ export const CATEGORIES_LIST = [
 
 fs.writeFileSync(path.join(__dirname, 'src', 'data', 'gamesData.ts'), content, 'utf8');
 console.log(`Successfully generated ${games.length} games in src/data/gamesData.ts!`);
+

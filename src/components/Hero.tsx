@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, X, Sparkles, Flame, Download } from 'lucide-react';
+import { Search, X, Sparkles, Download } from 'lucide-react';
 import type { Game } from '../types/game';
 
 interface HeroProps {
@@ -56,8 +56,6 @@ export const Hero: React.FC<HeroProps> = ({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
-
-  const trendingTags = ['Genshin Impact', 'Call of Duty', 'Asphalt 9', 'Subway Surfers', 'Minecraft'];
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[var(--bg-secondary)] via-[var(--bg-main)] to-[var(--bg-main)] border-b border-[var(--border-color)] py-8 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors">
@@ -192,23 +190,6 @@ export const Hero: React.FC<HeroProps> = ({
               )}
             </div>
           )}
-
-          {/* Trending Search Tags */}
-          <div className="mt-3 flex items-center justify-center flex-wrap gap-1.5 text-xs">
-            <span className="text-[var(--text-secondary)] flex items-center gap-1 mr-1 text-[11px]">
-              <Flame className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
-              Trending:
-            </span>
-            {trendingTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => onSearchChange(tag)}
-                className="px-2.5 py-1 rounded-md bg-[var(--bg-secondary)] hover:bg-[var(--bg-subtle)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-main)] transition-colors text-[11px] shadow-sm"
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
         </div>
       </div>
     </section>
