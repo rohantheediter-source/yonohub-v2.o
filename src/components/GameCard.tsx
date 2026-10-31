@@ -16,6 +16,7 @@ export const GameCard: React.FC<GameCardProps> = ({
 }) => {
   return (
     <div
+      data-testid="game-card"
       onClick={() => onSelect(game)}
       className="group relative flex flex-row items-center gap-3 sm:gap-4 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#202733] border border-[#303946] hover:border-[#00D6B5]/70 hover:bg-[#202733]/95 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-lg hover:shadow-[#00D6B5]/5"
     >

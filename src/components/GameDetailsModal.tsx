@@ -106,7 +106,7 @@ export const GameDetailsModal: React.FC<GameDetailsModalProps> = ({
       <div className="fixed inset-0" onClick={onClose} />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl bg-[#191E27] border border-[#303946] rounded-2xl shadow-2xl overflow-hidden z-10 my-auto flex flex-col max-h-[92vh]">
+      <div data-testid="game-details-modal" className="relative w-full max-w-4xl bg-[#191E27] border border-[#303946] rounded-2xl shadow-2xl overflow-hidden z-10 my-auto flex flex-col max-h-[92vh]">
         {/* Top Sticky Header */}
         <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 bg-[#111318]/90 border-b border-[#303946] backdrop-blur-md flex-shrink-0">
           <button
@@ -169,7 +169,7 @@ export const GameDetailsModal: React.FC<GameDetailsModalProps> = ({
               {/* Title, Developer, Badges */}
               <div className="space-y-1.5">
                 <div className="flex items-center flex-wrap gap-2">
-                  <h1 className="text-xl sm:text-2xl font-extrabold text-white">
+                  <h1 data-testid="modal-game-title" className="text-xl sm:text-2xl font-extrabold text-white">
                     {game.title}
                   </h1>
                   <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#00D6B5]/15 border border-[#00D6B5]/40 text-[#00D6B5] text-[10px] font-semibold">

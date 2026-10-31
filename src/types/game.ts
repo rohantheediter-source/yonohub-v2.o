@@ -47,3 +47,4 @@ export interface FilterState {
   offlineOnly: boolean;
   editorsChoiceOnly: boolean;
 }
+

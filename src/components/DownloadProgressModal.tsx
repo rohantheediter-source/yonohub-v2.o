@@ -35,36 +35,37 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
   }, [game]);
 
   useEffect(() => {
-    let interval: any;
+    let interval: ReturnType<typeof setInterval>;
     if (downloading && progress < 100) {
       interval = setInterval(() => {
         setProgress((prev) => {
           const next = prev + Math.floor(Math.random() * 15) + 10;
-          if (next >= 100) {
-            setDownloading(false);
-            setDownloadComplete(true);
-            onShowToast(`Downloaded ${game?.title} ${game?.version} successfully!`);
-            // Trigger actual download of a sample installer/manifest text file for full browser realism
-            try {
-              const element = document.createElement('a');
-              const fileContent = `Package: ${game?.packageName}\nGame: ${game?.title}\nVersion: ${game?.version}\nSize: ${game?.fileSize}\nVerified Safe: Yes\nSource: NexusPlay Gaming Vault\nOfficial Store: ${game?.googlePlayUrl}`;
-              const file = new Blob([fileContent], { type: 'text/plain' });
-              element.href = URL.createObjectURL(file);
-              element.download = `${game?.slug}-${game?.version}-nexusplay.apk.txt`;
-              document.body.appendChild(element);
-              element.click();
-              document.body.removeChild(element);
-            } catch {
-              // ignore
-            }
-            return 100;
-          }
-          return next;
+          return next >= 100 ? 100 : next;
         });
       }, 350);
     }
     return () => clearInterval(interval);
-  }, [downloading, progress, game, onShowToast]);
+  }, [downloading, progress]);
+
+  useEffect(() => {
+    if (progress >= 100 && downloading) {
+      setDownloading(false);
+      setDownloadComplete(true);
+      onShowToast(`Downloaded ${game?.title} ${game?.version} successfully!`);
+      try {
+        const element = document.createElement('a');
+        const fileContent = `Package: ${game?.packageName}\nGame: ${game?.title}\nVersion: ${game?.version}\nSize: ${game?.fileSize}\nVerified Safe: Yes\nSource: NexusPlay Gaming Vault\nOfficial Store: ${game?.googlePlayUrl}`;
+        const file = new Blob([fileContent], { type: 'text/plain' });
+        element.href = URL.createObjectURL(file);
+        element.download = `${game?.slug}-${game?.version}-nexusplay.apk.txt`;
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+      } catch {
+        // ignore
+      }
+    }
+  }, [progress, downloading, game, onShowToast]);
 
   if (!game) return null;
 
@@ -79,7 +80,7 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-lg bg-[#191E27] border border-[#303946] rounded-2xl shadow-2xl p-5 sm:p-6 z-10 space-y-5">
+      <div data-testid="download-modal" className="relative w-full max-w-lg bg-[#191E27] border border-[#303946] rounded-2xl shadow-2xl p-5 sm:p-6 z-10 space-y-5">
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-[#303946]">
           <div className="flex items-center gap-2">
