@@ -621,7 +621,22 @@ const rawList = [
   },
 ];
 
+const POPULAR_SLUGS = new Set([
+  'yono-arcade-agent',
+  'spin-101-official',
+  'love-rummy-333',
+  'ind-slots-invite-friend',
+  'yono-vip-bonus',
+  '777-game-yn-777',
+  'ind-club-free-cash',
+  'jaiho-arcade-agent',
+  'bingo-101-official',
+  '567-slots-game',
+]);
+
 const games = rawList.map((item, index) => {
+  const isPop = POPULAR_SLUGS.has(item.slug);
+  const isNw = !isPop;
   return {
     id: item.slug,
     slug: item.slug,
@@ -646,9 +661,9 @@ const games = rawList.map((item, index) => {
     updatedDate: 'Oct 2026',
     minAndroid: 'Android 5.0+',
     packageName: `com.${item.slug.replace(/-/g, '')}.app`,
-    isPopular: !!item.isPopular,
-    isNew: !!item.isNew || !item.isPopular,
-    isEditorsChoice: !!item.isEditorsChoice,
+    isPopular: isPop,
+    isNew: isNw,
+    isEditorsChoice: isPop,
     isOffline: false,
     tags: [item.category, 'Online', 'Multiplayer', 'Instant Play'],
     features: [
