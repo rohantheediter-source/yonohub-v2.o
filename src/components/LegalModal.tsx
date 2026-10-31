@@ -41,7 +41,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
             <>
               <h4 className="text-sm font-bold text-[var(--text-main)]">1. Information We Collect</h4>
               <p>
-                NexusPlay does not require account creation to browse or download games. We do
+                Yono Hub does not require account creation to browse or download games. We do
                 not collect personal identifiers like your address or phone number. We may collect
                 anonymized telemetry such as browser type and search queries to optimize server
                 performance.
@@ -55,22 +55,22 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
 
               <h4 className="text-sm font-bold text-[var(--text-main)]">3. Third-Party Links</h4>
               <p>
-                Our platform contains outbound links to authorized platforms such as the Google
-                Play Store. We encourage you to review their respective privacy practices.
+                Our platform contains outbound links to authorized platforms such as official app
+                portals and download mirrors. We encourage you to review their respective privacy practices.
               </p>
             </>
           ) : (
             <>
               <h4 className="text-sm font-bold text-[var(--text-main)]">1. Acceptance of Terms</h4>
               <p>
-                By accessing and utilizing NexusPlay, you acknowledge and agree to comply with
+                By accessing and utilizing Yono Hub, you acknowledge and agree to comply with
                 these Terms of Service. If you disagree with any portion, please discontinue
                 use immediately.
               </p>
 
               <h4 className="text-sm font-bold text-[var(--text-main)]">2. Permitted Use & Safety</h4>
               <p>
-                NexusPlay provides an index of mobile applications for informational and download
+                Yono Hub provides an index of mobile applications for informational and download
                 purposes. Users agree not to reverse engineer, disrupt network connectivity, or
                 attempt unauthorized scraping of our services.
               </p>
@@ -78,7 +78,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
               <h4 className="text-sm font-bold text-[var(--text-main)]">3. Intellectual Property</h4>
               <p>
                 All trademarks, copyrights, game titles, and digital assets belong to their
-                respective owners. NexusPlay operates as an independent discovery directory.
+                respective owners. Yono Hub operates as an independent discovery directory.
               </p>
             </>
           )}

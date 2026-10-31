@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({
                 </div>
               </div>
               <span className="text-base font-bold text-[var(--text-main)] tracking-tight">
-                NEXUS<span className="text-[var(--accent-primary)]">PLAY</span>
+                YONO<span className="text-[var(--accent-primary)]"> HUB</span>
               </span>
             </div>
             <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -192,7 +192,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Bar: Copyright & Back to Top */}
         <div className="pt-6 border-t border-[var(--border-color)] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left text-[11px] text-[var(--text-secondary)] leading-relaxed">
-            <p>© {new Date().getFullYear()} NexusPlay. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Yono Hub. All rights reserved.</p>
             <p className="text-[var(--text-muted)] mt-0.5">
               All mobile game titles, developer trademarks, and assets are property of their respective copyright holders.
             </p>

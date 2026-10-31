@@ -1,0 +1,7 @@
+Package: com.loverummy333.app
+Game: Love Rummy 333
+Version: v1.2.0
+Size: 52 MB
+Verified Safe: Yes
+Source: Yono Hub Gaming Vault
+Official Store: https://www.loverummy333.com/?code=GA1F523AWEY&t=1786437790

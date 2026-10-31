@@ -65,7 +65,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
                 <span className="text-lg font-bold tracking-tight text-[var(--text-main)] font-sans">
-                  NEXUS<span className="text-[var(--accent-primary)]">PLAY</span>
+                  YONO<span className="text-[var(--accent-primary)]"> HUB</span>
                 </span>
                 <span className="hidden sm:inline-block text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-[var(--bg-subtle)] border border-[var(--border-color)] text-[var(--text-secondary)]">
                   v2.0
@@ -310,7 +310,7 @@ export const Header: React.FC<HeaderProps> = ({
               >
                 <div className="flex items-center gap-2">
                   <Info className="w-4 h-4 text-[var(--accent-secondary)]" />
-                  <span>About NexusPlay</span>
+                  <span>About Yono Hub</span>
                 </div>
                 <ChevronRight className="w-4 h-4 text-[var(--text-secondary)]" />
               </button>

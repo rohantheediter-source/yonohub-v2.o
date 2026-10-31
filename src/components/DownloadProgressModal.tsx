@@ -54,10 +54,10 @@ export const DownloadProgressModal: React.FC<DownloadProgressModalProps> = ({
       onShowToast(`Downloaded ${game?.title} ${game?.version} successfully!`);
       try {
         const element = document.createElement('a');
-        const fileContent = `Package: ${game?.packageName}\nGame: ${game?.title}\nVersion: ${game?.version}\nSize: ${game?.fileSize}\nVerified Safe: Yes\nSource: NexusPlay Gaming Vault\nOfficial Store: ${game?.googlePlayUrl}`;
+        const fileContent = `Package: ${game?.packageName}\nGame: ${game?.title}\nVersion: ${game?.version}\nSize: ${game?.fileSize}\nVerified Safe: Yes\nSource: Yono Hub Gaming Vault\nOfficial Store: ${game?.googlePlayUrl}`;
         const file = new Blob([fileContent], { type: 'text/plain' });
         element.href = URL.createObjectURL(file);
-        element.download = `${game?.slug}-${game?.version}-nexusplay.apk.txt`;
+        element.download = `${game?.slug}-${game?.version}-yonohub.apk.txt`;
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);

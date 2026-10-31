@@ -17,7 +17,7 @@ import { GAMES_DATA } from './data/gamesData';
 export function App() {
   const [theme, setTheme] = useState<Theme>(() => {
     try {
-      const saved = localStorage.getItem('nexusplay_theme');
+      const saved = localStorage.getItem('yonohub_theme') || localStorage.getItem('nexusplay_theme');
       if (saved === 'dark' || saved === 'light') return saved;
     } catch {
       // ignore
@@ -52,7 +52,7 @@ export function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     try {
-      localStorage.setItem('nexusplay_theme', theme);
+      localStorage.setItem('yonohub_theme', theme);
     } catch {
       // ignore
     }
@@ -126,7 +126,7 @@ export function App() {
       editorsChoiceOnly: false,
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    showToast('Returned to NexusPlay Home');
+    showToast('Returned to Yono Hub Home');
   };
 
   // Category counts

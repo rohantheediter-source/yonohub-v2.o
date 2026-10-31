@@ -51,9 +51,9 @@ export const GameDetailsModal: React.FC<GameDetailsModalProps> = ({
       }
       setSelectedScreenshot(null);
       setActiveTab('about');
-      document.title = `${game.title} - Free Download | NexusPlay`;
+      document.title = `${game.title} - Free Download | Yono Hub`;
     } else {
-      document.title = 'NexusPlay - Modern Mobile Game Download Platform';
+      document.title = 'Yono Hub - Modern Mobile Game Download Platform';
     }
   }, [game]);
 

@@ -12,7 +12,7 @@ if (!fs.existsSync(SCREENSHOT_DIR)) {
 }
 
 async function runTests() {
-  console.log('🚀 Starting Automated End-to-End Test Suite for NexusPlay...');
+  console.log('🚀 Starting Automated End-to-End Test Suite for Yono Hub...');
   console.log(`Using browser: ${CHROME_PATH}`);
 
   const browser = await puppeteer.launch({
@@ -52,7 +52,7 @@ async function runTests() {
 
     const title = await page.title();
     console.log(`Page Title: "${title}"`);
-    if (!title.includes('NexusPlay')) throw new Error('Incorrect page title');
+    if (!title.includes('Yono Hub')) throw new Error('Incorrect page title');
 
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, '01-desktop-home.png') });
     console.log('✅ Homepage loaded cleanly. Screenshot saved: 01-desktop-home.png');
@@ -228,7 +228,7 @@ async function runTests() {
     await new Promise((r) => setTimeout(r, 400));
 
     const menuOpen = await page.evaluate(() => {
-      return document.body.innerText.includes('About NexusPlay');
+      return document.body.innerText.includes('About Yono Hub');
     });
     console.log(`Mobile menu drawer opened: ${menuOpen ? 'YES' : 'NO'}`);
     if (!menuOpen) throw new Error('Mobile menu drawer failed to open');

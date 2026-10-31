@@ -21,7 +21,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
               <Gamepad2 className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-[var(--text-main)]">About NexusPlay</h2>
+              <h2 className="text-lg font-bold text-[var(--text-main)]">About Yono Hub</h2>
               <p className="text-xs text-[var(--text-secondary)]">Premium Mobile Gaming Hub</p>
             </div>
           </div>
@@ -39,7 +39,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
             Our Mission
           </h3>
           <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-            NexusPlay was designed from the ground up to provide mobile gamers with an
+            Yono Hub was designed from the ground up to provide mobile gamers with an
             uncluttered, ultra-fast, and trustworthy portal to discover and download the
             finest Android games. We cut through the noise of bloated app stores to offer a
             streamlined, horizontal browsing experience focused on speed and safety.

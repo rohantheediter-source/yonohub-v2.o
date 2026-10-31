@@ -73,7 +73,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             </div>
             <h4 className="text-base font-bold text-[var(--text-main)]">Message Sent!</h4>
             <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-              Thank you for reaching out to NexusPlay. We will review your inquiry and follow up shortly.
+              Thank you for reaching out to Yono Hub. We will review your inquiry and follow up shortly.
             </p>
           </div>
         ) : (
