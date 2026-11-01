@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, X, Sparkles, Download } from 'lucide-react';
+import { Search, X, Download } from 'lucide-react';
 import type { Game } from '../types/game';
 
 interface HeroProps {
@@ -9,7 +9,7 @@ interface HeroProps {
   games: Game[];
   onSelectGame: (game: Game) => void;
   onQuickDownload: (game: Game) => void;
-  totalGamesCount: number;
+  totalGamesCount?: number;
 }
 
 export const Hero: React.FC<HeroProps> = ({
@@ -19,7 +19,6 @@ export const Hero: React.FC<HeroProps> = ({
   games,
   onSelectGame,
   onQuickDownload,
-  totalGamesCount,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -76,14 +75,6 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       <div className="relative max-w-4xl mx-auto text-center">
-        {/* Micro badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--bg-secondary)]/90 backdrop-blur-sm border border-teal-500/30 text-teal-600 dark:text-teal-400 text-xs font-bold mb-3 shadow-sm hover:scale-105 transition-transform duration-200">
-          <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-spin" style={{ animationDuration: '8s' }} />
-          <span>Verified APK Gaming Repository</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="text-[var(--text-secondary)] font-semibold">{totalGamesCount} Titles Active</span>
-        </div>
-
         {/* Heading & Subtitle */}
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-[var(--text-main)] mb-2.5 font-sans">
           Discover Your Next <span className="bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">Favorite Game</span>
