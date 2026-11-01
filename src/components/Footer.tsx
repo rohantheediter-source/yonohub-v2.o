@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Gamepad2,
   ShieldCheck,
   ChevronUp,
   Lock,
@@ -33,12 +32,14 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Col 1: Brand & Description */}
           <div className="space-y-3 md:col-span-1">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[var(--accent-secondary)] to-[var(--accent-primary)] p-[1.5px] shadow-sm">
-                <div className="w-full h-full bg-[var(--bg-secondary)] rounded-[6px] flex items-center justify-center">
-                  <Gamepad2 className="w-4 h-4 text-[var(--accent-primary)]" />
-                </div>
+              <div className="w-9 h-9 rounded-full p-[1.5px] bg-gradient-to-tr from-amber-400 via-emerald-500 to-teal-400 shadow-sm flex-shrink-0">
+                <img
+                  src="/yono-hub-logo.jpg"
+                  alt="Yono Hub Logo"
+                  className="w-full h-full rounded-full object-cover"
+                />
               </div>
-              <span className="text-base font-bold text-[var(--text-main)] tracking-tight">
+              <span className="text-base font-extrabold text-[var(--text-main)] tracking-tight">
                 YONO<span className="text-[var(--accent-primary)]"> HUB</span>
               </span>
             </div>

@@ -55,11 +55,13 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onResetHome}
             className="flex items-center gap-3 cursor-pointer select-none group"
           >
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-indigo-600 p-[1.5px] transition-transform duration-300 group-hover:scale-110 shadow-md shadow-teal-500/20">
-              <div className="w-full h-full bg-[var(--bg-secondary)] rounded-[10px] flex items-center justify-center">
-                <Gamepad2 className="w-5 h-5 text-teal-600 dark:text-teal-400 group-hover:rotate-12 transition-transform duration-300" />
-              </div>
-              <span className="absolute -top-1 -right-1 flex h-3 w-3">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-emerald-500 to-teal-400 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/40 group-hover:scale-105 transition-all duration-300">
+              <img
+                src="/yono-hub-logo.jpg"
+                alt="Yono Hub Logo"
+                className="w-full h-full rounded-full object-cover"
+              />
+              <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-[var(--bg-secondary)]"></span>
               </span>
@@ -75,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </span>
               </div>
               <span className="text-[10px] text-[var(--text-secondary)] tracking-wider uppercase hidden sm:block font-medium">
-                Mobile Game Vault
+                Explore • Play • Grow
               </span>
             </div>
           </div>

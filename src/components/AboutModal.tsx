@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ShieldCheck, Gamepad2, Award, Zap, CheckCircle2 } from 'lucide-react';
+import { X, ShieldCheck, Award, Zap, CheckCircle2 } from 'lucide-react';
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -17,12 +17,16 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[var(--bg-subtle)] border border-[var(--border-color)] flex items-center justify-center text-[var(--accent-primary)] shadow-sm">
-              <Gamepad2 className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-emerald-500 to-teal-400 shadow-md flex-shrink-0">
+              <img
+                src="/yono-hub-logo.jpg"
+                alt="Yono Hub Logo"
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
             <div>
               <h2 className="text-lg font-bold text-[var(--text-main)]">About Yono Hub</h2>
-              <p className="text-xs text-[var(--text-secondary)]">Premium Mobile Gaming Hub</p>
+              <p className="text-xs text-[var(--text-secondary)]">Explore • Play • Grow</p>
             </div>
           </div>
           <button
