@@ -9,9 +9,6 @@ import {
   ShieldAlert,
   Zap,
   Puzzle as PuzzleIcon,
-  SlidersHorizontal,
-  WifiOff,
-  Award,
   Coins,
   Trophy,
 } from 'lucide-react';
@@ -21,14 +18,13 @@ import { CATEGORIES_LIST } from '../data/gamesData';
 interface CategoryFiltersProps {
   filters: FilterState;
   onSelectCategory: (category: GameCategory) => void;
-  onUpdateFilters: (updates: Partial<FilterState>) => void;
+  onUpdateFilters?: (updates: Partial<FilterState>) => void;
   categoryCounts: Record<GameCategory, number>;
 }
 
 export const CategoryFilters: React.FC<CategoryFiltersProps> = ({
   filters,
   onSelectCategory,
-  onUpdateFilters,
   categoryCounts,
 }) => {
   const getCategoryIcon = (cat: GameCategory, isSelected: boolean) => {
@@ -114,54 +110,6 @@ export const CategoryFilters: React.FC<CategoryFiltersProps> = ({
               </button>
             );
           })}
-        </div>
-      </div>
-
-      {/* Secondary Sort & Quick Filters Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-[var(--border-color)] text-xs">
-        {/* Left: Quick toggles */}
-        <div className="flex items-center gap-1.5 flex-wrap">
-          <span className="text-[var(--text-secondary)] text-[11px] mr-1 hidden sm:inline">Filter:</span>
-          
-          <button
-            onClick={() => onUpdateFilters({ offlineOnly: !filters.offlineOnly })}
-            className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg border text-xs transition-colors shadow-sm ${
-              filters.offlineOnly
-                ? 'bg-[var(--accent-secondary)]/15 border-[var(--accent-secondary)] text-[var(--accent-secondary)] font-semibold'
-                : 'bg-[var(--bg-secondary)] border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-main)]'
-            }`}
-          >
-            <WifiOff className="w-3 h-3 text-[var(--accent-secondary)]" />
-            <span>Offline Play</span>
-          </button>
-
-          <button
-            onClick={() => onUpdateFilters({ editorsChoiceOnly: !filters.editorsChoiceOnly })}
-            className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg border text-xs transition-colors shadow-sm ${
-              filters.editorsChoiceOnly
-                ? 'bg-[var(--accent-primary)]/15 border-[var(--accent-primary)] text-[var(--accent-primary)] font-semibold'
-                : 'bg-[var(--bg-secondary)] border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-main)]'
-            }`}
-          >
-            <Award className="w-3 h-3 text-[var(--accent-primary)]" />
-            <span>Editors&apos; Choice</span>
-          </button>
-        </div>
-
-        {/* Right: Sort by selector */}
-        <div className="flex items-center gap-2">
-          <SlidersHorizontal className="w-3.5 h-3.5 text-[var(--text-secondary)]" />
-          <span className="text-[var(--text-secondary)] text-[11px]">Sort by:</span>
-          <select
-            value={filters.sortBy}
-            onChange={(e) => onUpdateFilters({ sortBy: e.target.value as FilterState['sortBy'] })}
-            className="bg-[var(--bg-secondary)] text-[var(--text-main)] text-xs border border-[var(--border-color)] rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-[var(--accent-primary)] cursor-pointer shadow-sm"
-          >
-            <option value="popular">Most Popular</option>
-            <option value="rating">Highest Rated</option>
-            <option value="newest">Latest Updates</option>
-            <option value="size">File Size</option>
-          </select>
         </div>
       </div>
     </div>
