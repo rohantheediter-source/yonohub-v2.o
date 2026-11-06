@@ -4,7 +4,8 @@ export type GameCategory =
   | 'All Games'
   | 'Popular Games'
   | 'New Release'
-  | 'Rummy';
+  | 'Rummy'
+  | 'Diwa';
 
 export interface Game {
   id: string;
@@ -30,6 +31,7 @@ export interface Game {
   isPopular?: boolean;
   isNew?: boolean;
   isRummy?: boolean;
+  isDiwa?: boolean;
   isEditorsChoice?: boolean;
   isOffline?: boolean;
   tags: string[];

@@ -136,7 +136,8 @@ export function App() {
       'All Games': GAMES_DATA.length,
       'Popular Games': GAMES_DATA.filter((g) => g.isPopular).length,
       'New Release': GAMES_DATA.filter((g) => g.isNew).length,
-      Rummy: GAMES_DATA.filter((g) => g.isRummy || g.category === 'Rummy').length,
+      Rummy: GAMES_DATA.filter((g) => (g.isRummy || g.category === 'Rummy') && g.category !== 'Diwa').length,
+      Diwa: GAMES_DATA.filter((g) => g.category === 'Diwa' || g.isDiwa).length,
     };
     return counts;
   }, []);
@@ -157,13 +158,15 @@ export function App() {
         }
       }
 
-      // 4 Main Category Filter
+      // Category Filter
       if (filters.category === 'Popular Games') {
         if (!game.isPopular) return false;
       } else if (filters.category === 'New Release') {
         if (!game.isNew) return false;
       } else if (filters.category === 'Rummy') {
-        if (!game.isRummy && game.category !== 'Rummy') return false;
+        if (game.category === 'Diwa' || (!game.isRummy && game.category !== 'Rummy')) return false;
+      } else if (filters.category === 'Diwa') {
+        if (game.category !== 'Diwa' && !game.isDiwa) return false;
       }
       // If 'All Games', shows ALL games!
 
@@ -282,6 +285,8 @@ export function App() {
                 ? 'Popular Games'
                 : filters.category === 'New Release'
                 ? 'New Release Games'
+                : filters.category === 'Diwa'
+                ? 'Diwa Games'
                 : 'Rummy Games'
             }
           />

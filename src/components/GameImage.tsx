@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Gamepad2, Trophy } from 'lucide-react';
+import { Gamepad2, Trophy, Crown } from 'lucide-react';
 import type { GameCategory } from '../types/game';
 
 interface GameImageProps {
@@ -23,6 +23,8 @@ export const GameImage: React.FC<GameImageProps> = ({
   // Category based theme gradient for fallback
   const getCategoryColor = () => {
     switch (category) {
+      case 'Diwa':
+        return 'from-amber-500/20 to-rose-600/30 text-amber-500';
       case 'Rummy':
         return 'from-emerald-500/20 to-teal-600/30 text-emerald-500';
       default:
@@ -32,6 +34,8 @@ export const GameImage: React.FC<GameImageProps> = ({
 
   const getCategoryIcon = () => {
     switch (category) {
+      case 'Diwa':
+        return <Crown className="w-1/2 h-1/2" />;
       case 'Rummy':
         return <Trophy className="w-1/2 h-1/2" />;
       default:

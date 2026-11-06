@@ -4,7 +4,8 @@ export const CATEGORIES_LIST: GameCategory[] = [
   'All Games',
   'Popular Games',
   'New Release',
-  'Rummy'
+  'Rummy',
+  'Diwa'
 ];
 
 export const GAMES_DATA: Game[] = [
@@ -290,7 +291,7 @@ export const GAMES_DATA: Game[] = [
     "title": "Diwa 777 Game",
     "shortDescription": "Diwa 777 offers classic triple-seven slot reels with high multiplier bonuses, free spins, daily coin rewards, and certified random outcomes.",
     "fullDescription": "Diwa 777 offers classic triple-seven slot reels with high multiplier bonuses, free spins, daily coin rewards, and certified random outcomes.",
-    "category": "All Games",
+    "category": "Diwa",
     "subCategory": "Classic 777 Slots",
     "icon": "/logos/diwa-777.jpeg",
     "bannerImage": "/logos/diwa-777.jpeg",
@@ -328,7 +329,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://sharediwa777.cyou?pid=366827405&channel=2010001&pkg=com.diwa777.app",
     "googlePlayUrl": "https://sharediwa777.cyou?pid=366827405&channel=2010001&pkg=com.diwa777.app",
     "gameType": "Diwa Series",
-    "isRummy": false
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "diwa-ace",
@@ -336,7 +338,7 @@ export const GAMES_DATA: Game[] = [
     "title": "Diwa Ace Game",
     "shortDescription": "Diwa Ace Game presents elite digital skill games with certified fair algorithms, crisp graphics, and high-adrenaline gameplay.",
     "fullDescription": "Diwa Ace Game presents elite digital skill games with certified fair algorithms, crisp graphics, and high-adrenaline gameplay.",
-    "category": "Rummy",
+    "category": "Diwa",
     "subCategory": "Ace Club Arcade",
     "icon": "/logos/diwa-ace.jpeg",
     "bannerImage": "/logos/diwa-ace.jpeg",
@@ -374,7 +376,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://diwaaceshare.vip?pid=405687667&channel=2010001&pkg=com.diwaace.app",
     "googlePlayUrl": "https://diwaaceshare.vip?pid=405687667&channel=2010001&pkg=com.diwaace.app",
     "gameType": "Diwa Series",
-    "isRummy": true
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "diwa-game",
@@ -382,7 +385,7 @@ export const GAMES_DATA: Game[] = [
     "title": "Diwa Game Official",
     "shortDescription": "Diwa Game is your all-in-one gaming arena with quick multiplayer rounds, smooth graphics, and seamless device compatibility on all Android hardware.",
     "fullDescription": "Diwa Game is your all-in-one gaming arena with quick multiplayer rounds, smooth graphics, and seamless device compatibility on all Android hardware.",
-    "category": "All Games",
+    "category": "Diwa",
     "subCategory": "All-in-One Arcade",
     "icon": "/logos/diwa-game.jpeg",
     "bannerImage": "/logos/diwa-game.jpeg",
@@ -420,7 +423,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://diwagameshare.games?pid=415047394&channel=2010001&pkg=com.diwagame.app",
     "googlePlayUrl": "https://diwagameshare.games?pid=415047394&channel=2010001&pkg=com.diwagame.app",
     "gameType": "Diwa Series",
-    "isRummy": false
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "diwa-king",
@@ -428,7 +432,7 @@ export const GAMES_DATA: Game[] = [
     "title": "Diwa King App",
     "shortDescription": "Claim the throne with Diwa King App! Dominate player leaderboards, compete in live tournaments, and earn royal achievements.",
     "fullDescription": "Claim the throne with Diwa King App! Dominate player leaderboards, compete in live tournaments, and earn royal achievements.",
-    "category": "Rummy",
+    "category": "Diwa",
     "subCategory": "King of Arcade",
     "icon": "/logos/diwa-king.jpeg",
     "bannerImage": "/logos/diwa-king.jpeg",
@@ -466,7 +470,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://diwakingshare.life?pid=338559476&channel=2010001&pkg=com.diwaking.app",
     "googlePlayUrl": "https://diwakingshare.life?pid=338559476&channel=2010001&pkg=com.diwaking.app",
     "gameType": "Diwa Series",
-    "isRummy": true
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "diwa-spin",
@@ -474,7 +479,7 @@ export const GAMES_DATA: Game[] = [
     "title": "Diwa Spin Game",
     "shortDescription": "Diwa Spin Game brings high-speed spin reels, bonus multipliers, daily lucky draws, and lightning-fast rewards on every spin.",
     "fullDescription": "Diwa Spin Game brings high-speed spin reels, bonus multipliers, daily lucky draws, and lightning-fast rewards on every spin.",
-    "category": "All Games",
+    "category": "Diwa",
     "subCategory": "Spin Wheels & Slots",
     "icon": "/logos/diwa-spin.jpeg",
     "bannerImage": "/logos/diwa-spin.jpeg",
@@ -512,7 +517,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://diwaspinshare.co?pid=391626979&channel=2010001&pkg=com.diwaspin.app",
     "googlePlayUrl": "https://diwaspinshare.co?pid=391626979&channel=2010001&pkg=com.diwaspin.app",
     "gameType": "Diwa Series",
-    "isRummy": false
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "diwa-top",
@@ -520,7 +526,7 @@ export const GAMES_DATA: Game[] = [
     "title": "Diwa Top App",
     "shortDescription": "Diwa Top App showcases the top-rated mobile games with blazing fast APK download rates, high stability, and instant room creation.",
     "fullDescription": "Diwa Top App showcases the top-rated mobile games with blazing fast APK download rates, high stability, and instant room creation.",
-    "category": "All Games",
+    "category": "Diwa",
     "subCategory": "Top Charts Arcade",
     "icon": "/logos/diwa-top.jpeg",
     "bannerImage": "/logos/diwa-top.jpeg",
@@ -558,7 +564,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://diwatopshare.games?pid=353844227&channel=2010001&pkg=com.diwatop.app",
     "googlePlayUrl": "https://diwatopshare.games?pid=353844227&channel=2010001&pkg=com.diwatop.app",
     "gameType": "Diwa Series",
-    "isRummy": false
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "diwa-vip",
@@ -566,7 +573,7 @@ export const GAMES_DATA: Game[] = [
     "title": "Diwa VIP Club",
     "shortDescription": "Diwa VIP Club unlocks exclusive game modes, priority servers, premium lounge tables, and continuous reward distributions.",
     "fullDescription": "Diwa VIP Club unlocks exclusive game modes, priority servers, premium lounge tables, and continuous reward distributions.",
-    "category": "All Games",
+    "category": "Diwa",
     "subCategory": "VIP Elite Lounge",
     "icon": "/logos/diwa-vip.jpeg",
     "bannerImage": "/logos/diwa-vip.jpeg",
@@ -604,7 +611,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://diwavipshare.club?pid=472115817&channel=2010001&pkg=com.diwavip.app",
     "googlePlayUrl": "https://diwavipshare.club?pid=472115817&channel=2010001&pkg=com.diwavip.app",
     "gameType": "Diwa Series",
-    "isRummy": false
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "diwa-wow",
@@ -612,7 +620,7 @@ export const GAMES_DATA: Game[] = [
     "title": "Diwa Wow App",
     "shortDescription": "Diwa Wow App delivers mind-blowing interactive gaming fun with ultra-crisp audio-visual animations and easy-to-learn mechanics.",
     "fullDescription": "Diwa Wow App delivers mind-blowing interactive gaming fun with ultra-crisp audio-visual animations and easy-to-learn mechanics.",
-    "category": "All Games",
+    "category": "Diwa",
     "subCategory": "Casual Entertainment",
     "icon": "/logos/diwa-wow.jpeg",
     "bannerImage": "/logos/diwa-wow.jpeg",
@@ -650,7 +658,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://diwawowshare.im?pid=411247690&channel=2010001&pkg=com.diwawow.app",
     "googlePlayUrl": "https://diwawowshare.im?pid=411247690&channel=2010001&pkg=com.diwawow.app",
     "gameType": "Diwa Series",
-    "isRummy": false
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "diwa-win",
@@ -658,7 +667,7 @@ export const GAMES_DATA: Game[] = [
     "title": "DiwaWin App",
     "shortDescription": "DiwaWin App brings an exciting mobile gaming experience with fast gameplay, vibrant visual effects, certified fair algorithms, and instant APK installation.",
     "fullDescription": "DiwaWin App brings an exciting mobile gaming experience with fast gameplay, vibrant visual effects, certified fair algorithms, and instant APK installation.",
-    "category": "Rummy",
+    "category": "Diwa",
     "subCategory": "Skill Arcade",
     "icon": "/logos/diwa-win.jpeg",
     "bannerImage": "/logos/diwa-win.jpeg",
@@ -696,7 +705,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://diwawinshare.xyz?pid=299067289&channel=2010001&pkg=com.diwawin.app",
     "googlePlayUrl": "https://diwawinshare.xyz?pid=299067289&channel=2010001&pkg=com.diwawin.app",
     "gameType": "Diwa Series",
-    "isRummy": true
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "diwa-x",
@@ -704,7 +714,7 @@ export const GAMES_DATA: Game[] = [
     "title": "DiwaX App",
     "shortDescription": "DiwaX App delivers next-gen mobile entertainment featuring smooth matchmaking, low latency servers, and thrilling digital arcade contests.",
     "fullDescription": "DiwaX App delivers next-gen mobile entertainment featuring smooth matchmaking, low latency servers, and thrilling digital arcade contests.",
-    "category": "All Games",
+    "category": "Diwa",
     "subCategory": "Action Arcade",
     "icon": "/logos/diwa-x.jpeg",
     "bannerImage": "/logos/diwa-x.jpeg",
@@ -742,7 +752,8 @@ export const GAMES_DATA: Game[] = [
     "downloadUrl": "https://diwaxshare.xyz?pid=368294402&channel=2010001&pkg=com.diwax.app",
     "googlePlayUrl": "https://diwaxshare.xyz?pid=368294402&channel=2010001&pkg=com.diwax.app",
     "gameType": "Diwa Series",
-    "isRummy": false
+    "isRummy": false,
+    "isDiwa": true
   },
   {
     "id": "boss-rummy",

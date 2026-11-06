@@ -91,6 +91,14 @@ export const Footer: React.FC<FooterProps> = ({
                   Rummy Games
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => onSelectCategory('Diwa')}
+                  className="hover:text-[var(--accent-primary)] transition-colors"
+                >
+                  Diwa Games
+                </button>
+              </li>
             </ul>
           </div>
 

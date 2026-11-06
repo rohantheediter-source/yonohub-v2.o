@@ -14,7 +14,8 @@ export const GameCard: React.FC<GameCardProps> = ({
   onSelect,
   onDownload,
 }) => {
-  const isRummy = game.isRummy || game.category === 'Rummy';
+  const isDiwa = game.category === 'Diwa' || game.isDiwa;
+  const isRummy = (game.isRummy || game.category === 'Rummy') && !isDiwa;
 
   return (
     <article
@@ -77,12 +78,14 @@ export const GameCard: React.FC<GameCardProps> = ({
         <div className="flex items-center flex-wrap gap-1.5 text-[10px] sm:text-[11px] text-[var(--text-secondary)]">
           <span
             className={`px-2 py-0.5 rounded-md border font-semibold ${
-              isRummy
+              isDiwa
+                ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30'
+                : isRummy
                 ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
                 : 'bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/30'
             }`}
           >
-            {isRummy ? 'Rummy' : 'Games'}
+            {isDiwa ? 'Diwa' : isRummy ? 'Rummy' : 'Games'}
           </span>
 
           <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-[var(--bg-subtle)] border border-[var(--border-color)]/70">
