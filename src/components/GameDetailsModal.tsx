@@ -51,10 +51,45 @@ export const GameDetailsModal: React.FC<GameDetailsModalProps> = ({
       }
       setSelectedScreenshot(null);
       setActiveTab('about');
-      document.title = `${game.title} - Free Download | Yono Hub`;
+      document.title = `${game.title} - Download Verified APK | Yono Hub`;
+
+      // Inject dynamic JSON-LD structured data for this game
+      let script = document.getElementById('game-jsonld') as HTMLScriptElement | null;
+      if (!script) {
+        script = document.createElement('script');
+        script.id = 'game-jsonld';
+        script.type = 'application/ld+json';
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: game.title,
+        operatingSystem: 'Android',
+        applicationCategory: 'GameApplication',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'INR',
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: game.rating,
+          ratingCount: parseInt(game.reviewCount.replace(/[^0-9]/g, '')) || 1000,
+        },
+        description: game.shortDescription,
+        downloadUrl: game.downloadUrl,
+      });
     } else {
-      document.title = 'Yono Hub - Modern Mobile Game Download Platform';
+      document.title = 'Yono Hub - Download Verified Mobile Games & Rummy APKs';
+      const script = document.getElementById('game-jsonld');
+      if (script) script.remove();
     }
+
+    return () => {
+      const script = document.getElementById('game-jsonld');
+      if (script) script.remove();
+    };
   }, [game]);
 
   // Handle escape key

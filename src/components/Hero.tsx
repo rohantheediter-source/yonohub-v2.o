@@ -75,13 +75,19 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       <div className="relative max-w-4xl mx-auto text-center">
-        {/* Heading & Subtitle */}
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-[var(--text-main)] mb-2.5 font-sans">
-          Discover Your Next <span className="bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">Favorite Game</span>
-        </h1>
-        <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-xl mx-auto mb-6 font-medium">
-          Explore and download your favourite mobile games with fast APK speeds.
-        </p>
+        {/* Banner Image replacing text heading */}
+        <div className="relative max-w-2xl sm:max-w-3xl mx-auto mb-6 sm:mb-8 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] group transition-all duration-300 hover:shadow-teal-500/10">
+          <img
+            src="/yono-hub-banner.jpg"
+            alt="Yono Hub - Explore, Play, Grow"
+            className="w-full h-auto block object-contain mx-auto transition-transform duration-500 group-hover:scale-[1.01]"
+            loading="eager"
+            fetchPriority="high"
+            width="1200"
+            height="400"
+          />
+        </div>
+        <h1 className="sr-only">Yono Hub - Explore, Play, Grow. Download Verified Mobile Games &amp; Rummy APKs.</h1>
 
         {/* Modern Search Bar */}
         <div ref={containerRef} className="relative max-w-2xl mx-auto text-left">

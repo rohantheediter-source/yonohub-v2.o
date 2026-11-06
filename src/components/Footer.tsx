@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onSelectCategory('All Games')}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  All Games (52)
+                  All Games
                 </button>
               </li>
               <li>
@@ -77,10 +77,10 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCategory('New Releases')}
+                  onClick={() => onSelectCategory('New Release')}
                   className="hover:text-[var(--accent-primary)] transition-colors"
                 >
-                  New Releases
+                  New Release
                 </button>
               </li>
               <li>
@@ -164,11 +164,11 @@ export const Footer: React.FC<FooterProps> = ({
                 <span className="font-bold text-xs">X</span>
               </a>
               <a
-                href="https://t.me"
+                href="https://t.me/+jIIGcRbh3Hc3MmU1"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Telegram"
-                className="w-8 h-8 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-color)] flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--accent-primary)] hover:border-[var(--accent-primary)] transition-colors shadow-sm"
+                title="Telegram Official Channel"
+                className="w-8 h-8 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-color)] flex items-center justify-center text-[var(--text-secondary)] hover:text-[#229ED9] hover:border-[#229ED9] transition-colors shadow-sm"
               >
                 <span className="font-bold text-xs">TG</span>
               </a>

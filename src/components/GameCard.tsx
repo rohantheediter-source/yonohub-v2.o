@@ -14,24 +14,12 @@ export const GameCard: React.FC<GameCardProps> = ({
   onSelect,
   onDownload,
 }) => {
-  const getCategoryBadgeStyle = (cat: string) => {
-    switch (cat) {
-      case 'Rummy':
-        return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30';
-      case 'Slots':
-        return 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30';
-      case 'Arcade':
-        return 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/30';
-      case 'Puzzle':
-        return 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/30';
-      default:
-        return 'bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/30';
-    }
-  };
+  const isRummy = game.isRummy || game.category === 'Rummy';
 
   return (
-    <div
+    <article
       data-testid="game-card"
+      aria-label={game.title}
       onClick={() => onSelect(game)}
       className="game-card-transition group relative flex flex-row items-center gap-3 sm:gap-4 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)] hover:border-teal-500/60 hover:bg-[var(--bg-card-hover)] cursor-pointer shadow-sm"
     >
@@ -87,8 +75,14 @@ export const GameCard: React.FC<GameCardProps> = ({
 
         {/* Meta badges: Category, Size, Version */}
         <div className="flex items-center flex-wrap gap-1.5 text-[10px] sm:text-[11px] text-[var(--text-secondary)]">
-          <span className={`px-2 py-0.5 rounded-md border font-semibold ${getCategoryBadgeStyle(game.category)}`}>
-            {game.category}
+          <span
+            className={`px-2 py-0.5 rounded-md border font-semibold ${
+              isRummy
+                ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
+                : 'bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/30'
+            }`}
+          >
+            {isRummy ? 'Rummy' : 'Games'}
           </span>
 
           <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-[var(--bg-subtle)] border border-[var(--border-color)]/70">
@@ -121,6 +115,6 @@ export const GameCard: React.FC<GameCardProps> = ({
           <span className="uppercase">Download</span>
         </button>
       </div>
-    </div>
+    </article>
   );
 };

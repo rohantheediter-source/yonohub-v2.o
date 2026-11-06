@@ -90,6 +90,27 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
           </p>
         </div>
 
+        {/* 18+ Responsible Gaming Disclaimer */}
+        <div className="p-4 sm:p-5 rounded-xl bg-amber-500/10 border border-amber-500/25 space-y-2.5 text-xs text-[var(--text-secondary)]">
+          <div className="flex items-center gap-2">
+            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400 font-extrabold text-[11px] border border-amber-500/40">
+              18+
+            </span>
+            <h4 className="font-bold text-sm text-amber-600 dark:text-amber-400">
+              18+ Only
+            </h4>
+          </div>
+          <p className="leading-relaxed">
+            This website is intended for users aged 18 years and above. The games available on this website are provided for entertainment purposes. Users should play responsibly and understand that participation in any game or activity is entirely at their own risk.
+          </p>
+          <p className="leading-relaxed">
+            Yono Hub does not guarantee winnings, profits, or any specific outcome. Users are responsible for understanding and complying with the laws and regulations applicable in their location.
+          </p>
+          <p className="font-semibold text-amber-600 dark:text-amber-400">
+            If you are under 18, please do not use this website.
+          </p>
+        </div>
+
         <div className="pt-2 flex justify-end">
           <button
             onClick={onClose}

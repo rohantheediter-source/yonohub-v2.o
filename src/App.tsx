@@ -9,6 +9,7 @@ import { AboutModal } from './components/AboutModal';
 import { ContactModal } from './components/ContactModal';
 import { LegalModal } from './components/LegalModal';
 import { Toast } from './components/Toast';
+import { FloatingTelegram } from './components/FloatingTelegram';
 import { Footer } from './components/Footer';
 
 import type { Game, GameCategory, FilterState, Theme } from './types/game';
@@ -134,15 +135,8 @@ export function App() {
     const counts: Record<GameCategory, number> = {
       'All Games': GAMES_DATA.length,
       'Popular Games': GAMES_DATA.filter((g) => g.isPopular).length,
-      'New Releases': GAMES_DATA.filter((g) => g.isNew).length,
-      Rummy: GAMES_DATA.filter((g) => g.category === 'Rummy').length,
-      Slots: GAMES_DATA.filter((g) => g.category === 'Slots').length,
-      Action: GAMES_DATA.filter((g) => g.category === 'Action').length,
-      Adventure: GAMES_DATA.filter((g) => g.category === 'Adventure').length,
-      Racing: GAMES_DATA.filter((g) => g.category === 'Racing').length,
-      Strategy: GAMES_DATA.filter((g) => g.category === 'Strategy').length,
-      Arcade: GAMES_DATA.filter((g) => g.category === 'Arcade').length,
-      Puzzle: GAMES_DATA.filter((g) => g.category === 'Puzzle').length,
+      'New Release': GAMES_DATA.filter((g) => g.isNew).length,
+      Rummy: GAMES_DATA.filter((g) => g.isRummy || g.category === 'Rummy').length,
     };
     return counts;
   }, []);
@@ -163,14 +157,15 @@ export function App() {
         }
       }
 
-      // Category filter
+      // 4 Main Category Filter
       if (filters.category === 'Popular Games') {
         if (!game.isPopular) return false;
-      } else if (filters.category === 'New Releases') {
+      } else if (filters.category === 'New Release') {
         if (!game.isNew) return false;
-      } else if (filters.category !== 'All Games') {
-        if (game.category !== filters.category) return false;
+      } else if (filters.category === 'Rummy') {
+        if (!game.isRummy && game.category !== 'Rummy') return false;
       }
+      // If 'All Games', shows ALL games!
 
       // Offline filter
       if (filters.offlineOnly && !game.isOffline) {
@@ -184,6 +179,9 @@ export function App() {
 
       return true;
     }).sort((a, b) => {
+      if (filters.sortBy === 'name') {
+        return a.title.localeCompare(b.title);
+      }
       if (filters.sortBy === 'rating') {
         return b.rating - a.rating;
       }
@@ -280,7 +278,11 @@ export function App() {
                 ? `Results for "${searchQuery}"`
                 : filters.category === 'All Games'
                 ? 'All Available Games'
-                : `${filters.category}`
+                : filters.category === 'Popular Games'
+                ? 'Popular Games'
+                : filters.category === 'New Release'
+                ? 'New Release Games'
+                : 'Rummy Games'
             }
           />
         </div>
@@ -333,6 +335,9 @@ export function App() {
         type={legalType}
         onClose={() => setLegalType(null)}
       />
+
+      {/* Floating Telegram Community Button */}
+      <FloatingTelegram url="https://t.me/+jIIGcRbh3Hc3MmU1" />
 
       {/* Toast Notification */}
       <Toast message={toastMessage} />
