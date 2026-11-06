@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://yonohub-v2-o.vercel.app/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -10,445 +10,445 @@
 
   <!-- Categories -->
   <url>
-    <loc>https://example.com/?category=All+Games</loc>
+    <loc>https://yonohub-v2-o.vercel.app/?category=All+Games</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://example.com/?category=Popular+Games</loc>
+    <loc>https://yonohub-v2-o.vercel.app/?category=Popular+Games</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://example.com/?category=New+Release</loc>
+    <loc>https://yonohub-v2-o.vercel.app/?category=New+Release</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://example.com/?category=Rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/?category=Rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/yono-777</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/yono-777</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/yono-arcade</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/yono-arcade</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/yono-games</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/yono-games</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/yono-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/yono-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/yono-slots</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/yono-slots</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/yono-vip</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/yono-vip</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-777</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-777</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-ace</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-ace</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-game</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-game</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-king</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-king</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-spin</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-spin</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-top</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-top</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-vip</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-vip</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-wow</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-wow</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-win</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-win</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/diwa-x</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/diwa-x</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/boss-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/boss-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/jaiho-91</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/jaiho-91</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/jaiho-arcade</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/jaiho-arcade</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/jaiho-slots</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/jaiho-slots</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/jaiho-win</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/jaiho-win</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/hindi-777</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/hindi-777</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/ind-club</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/ind-club</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/ind-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/ind-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/ind-slots</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/ind-slots</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/inr-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/inr-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/spin-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/spin-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/win-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/win-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/101z</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/101z</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/3-love-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/3-love-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/abc-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/abc-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/game-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/game-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/gogo-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/gogo-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/gold-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/gold-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/hi-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/hi-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/joy-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/joy-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/max-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/max-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/ok-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/ok-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/royally-rummy-vip</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/royally-rummy-vip</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rumble-rummy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rumble-rummy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-77</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-77</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-888-vip</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-888-vip</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-91</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-91</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-apple</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-apple</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-bloc</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-bloc</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-golds</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-golds</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-good</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-good</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-home</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-home</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-leader</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-leader</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-ludo</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-ludo</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-mars</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-mars</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/rummy-zip</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/rummy-zip</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/teen-patti-joy</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/teen-patti-joy</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/567-slots</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/567-slots</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/777-game</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/777-game</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/789-jackpots</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/789-jackpots</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/bingo-101</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/bingo-101</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/dhan-game-account</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/dhan-game-account</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/dhan-win-game</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/dhan-win-game</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/maha-games</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/maha-games</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/mbm-bet</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/mbm-bet</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/neta-vip</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/neta-vip</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/saga-slots</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/saga-slots</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/share-slots-977</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/share-slots-977</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/slots-spin</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/slots-spin</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/slots-winner</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/slots-winner</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/spin-101</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/spin-101</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/spin-777</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/spin-777</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/spin-crush</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/spin-crush</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/#/game/spin-gold</loc>
+    <loc>https://yonohub-v2-o.vercel.app/#/game/spin-gold</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

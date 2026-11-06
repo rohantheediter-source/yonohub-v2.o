@@ -1,5 +1,4 @@
 # robots.txt for Yono Hub V2.0
-# Update https://example.com/ with your actual deployment domain
 
 User-agent: *
 Allow: /
@@ -9,5 +8,4 @@ User-agent: Googlebot
 Allow: /
 
 # Sitemap Location
-Sitemap: https://example.com/sitemap.xml
-
+Sitemap: https://yonohub-v2-o.vercel.app/sitemap.xml
