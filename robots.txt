@@ -9,3 +9,4 @@ Allow: /
 
 # Sitemap Location
 Sitemap: https://yonohub-v2-o.vercel.app/sitemap.xml
+

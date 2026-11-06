@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, X, Download } from 'lucide-react';
+import { Search, X, Download, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { Game } from '../types/game';
 
 interface HeroProps {
@@ -12,6 +12,17 @@ interface HeroProps {
   totalGamesCount?: number;
 }
 
+const HERO_BANNERS = [
+  {
+    src: '/yono-hub-banner.jpg',
+    alt: 'Yono Hub - Explore, Play, Grow',
+  },
+  {
+    src: '/yono-app-hub-banner.jpg',
+    alt: 'Yono App Hub - Explore, Play, Grow',
+  },
+];
+
 export const Hero: React.FC<HeroProps> = ({
   searchQuery,
   onSearchChange,
@@ -21,8 +32,49 @@ export const Hero: React.FC<HeroProps> = ({
   onQuickDownload,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  // Auto-play sliding banner carousel every 4.5 seconds
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_BANNERS.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % HERO_BANNERS.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + HERO_BANNERS.length) % HERO_BANNERS.length);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 50) {
+      nextSlide();
+    } else if (diff < -50) {
+      prevSlide();
+    }
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
 
   // Filter suggestions based on query
   const suggestions = searchQuery.trim().length > 0
@@ -75,19 +127,74 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       <div className="relative max-w-4xl mx-auto text-center">
-        {/* Banner Image replacing text heading */}
-        <div className="relative max-w-2xl sm:max-w-3xl mx-auto mb-6 sm:mb-8 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] group transition-all duration-300 hover:shadow-teal-500/10">
-          <img
-            src="/yono-hub-banner.jpg"
-            alt="Yono Hub - Explore, Play, Grow"
-            className="w-full h-auto block object-contain mx-auto transition-transform duration-500 group-hover:scale-[1.01]"
-            loading="eager"
-            fetchPriority="high"
-            width="1200"
-            height="400"
-          />
+        {/* Sliding Hero Banner Carousel */}
+        <div
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          className="relative max-w-2xl sm:max-w-3xl mx-auto mb-6 sm:mb-8 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] group select-none transition-all duration-300 hover:shadow-teal-500/10"
+        >
+          {/* Slides Track with Horizontal Slide Animation */}
+          <div
+            className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {HERO_BANNERS.map((banner, idx) => (
+              <div key={banner.src} className="w-full flex-shrink-0">
+                <img
+                  src={banner.src}
+                  alt={banner.alt}
+                  className="w-full h-auto block object-contain mx-auto"
+                  loading={idx === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={idx === 0 ? 'high' : 'auto'}
+                  width="1200"
+                  height="400"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Left Navigation Chevron Button */}
+          <button
+            type="button"
+            onClick={prevSlide}
+            aria-label="Previous Banner"
+            className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/45 hover:bg-black/75 text-white backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer shadow-lg active:scale-95"
+          >
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+          </button>
+
+          {/* Right Navigation Chevron Button */}
+          <button
+            type="button"
+            onClick={nextSlide}
+            aria-label="Next Banner"
+            className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/45 hover:bg-black/75 text-white backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer shadow-lg active:scale-95"
+          >
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+          </button>
+
+          {/* Slide Indicator Dots */}
+          <div className="absolute bottom-2.5 sm:bottom-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/45 backdrop-blur-md border border-white/15">
+            {HERO_BANNERS.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setCurrentSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`transition-all duration-300 rounded-full cursor-pointer ${
+                  currentSlide === idx
+                    ? 'w-6 h-1.5 bg-gradient-to-r from-teal-400 to-emerald-400'
+                    : 'w-1.5 h-1.5 bg-white/50 hover:bg-white/80'
+                }`}
+              />
+            ))}
+          </div>
         </div>
-        <h1 className="sr-only">Yono Hub - Explore, Play, Grow. Download Verified Mobile Games &amp; Rummy APKs.</h1>
+
+        <h1 className="sr-only">Yono Hub &amp; Yono App Hub - Explore, Play, Grow. Download Verified Mobile Games &amp; Rummy APKs.</h1>
 
         {/* Modern Search Bar */}
         <div ref={containerRef} className="relative max-w-2xl mx-auto text-left">
