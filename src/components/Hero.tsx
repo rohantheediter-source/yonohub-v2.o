@@ -134,23 +134,23 @@ export const Hero: React.FC<HeroProps> = ({
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="relative max-w-2xl sm:max-w-3xl mx-auto mb-6 sm:mb-8 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] group select-none transition-all duration-300 hover:shadow-teal-500/10"
+          className="relative max-w-2xl sm:max-w-3xl mx-auto mb-6 sm:mb-8 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] aspect-[1024/384] group select-none transition-all duration-300 hover:shadow-teal-500/10"
         >
           {/* Slides Track with Horizontal Slide Animation */}
           <div
-            className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+            className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-full h-full"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {HERO_BANNERS.map((banner, idx) => (
-              <div key={banner.src} className="w-full flex-shrink-0">
+              <div key={banner.src} className="w-full h-full flex-shrink-0 aspect-[1024/384]">
                 <img
                   src={banner.src}
                   alt={banner.alt}
-                  className="w-full h-auto block object-contain mx-auto"
+                  className="w-full h-full object-cover block mx-auto"
                   loading={idx === 0 ? 'eager' : 'lazy'}
                   fetchPriority={idx === 0 ? 'high' : 'auto'}
-                  width="1200"
-                  height="400"
+                  width="1024"
+                  height="384"
                 />
               </div>
             ))}
